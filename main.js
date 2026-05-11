@@ -17,7 +17,7 @@
   /* ============================================================
      MOBILE MENU TOGGLE
      ============================================================ */
-  const toggle   = document.querySelector('.nav-toggle');
+  const toggle = document.querySelector('.nav-toggle');
   const mobileMenu = document.getElementById('mobileMenu');
   if (toggle && mobileMenu) {
     toggle.addEventListener('click', () => {
@@ -138,4 +138,52 @@
     });
   });
 
+  /* ============================================================
+   AUTO UPDATE LATEST WRITINGS ON HOMEPAGE
+   ============================================================ */
+  // Sadece ana sayfada çalışsın (writings preview bölümü varsa)
+  const writingsPreview = document.getElementById('writings-preview');
+  if (writingsPreview) {
+    fetch('writings.html')
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const writingRows = doc.querySelectorAll('.writing-row');
+
+        // En fazla 3 yazıyı al
+        const latestPosts = Array.from(writingRows).slice(0, 3);
+
+        // posts-grid container'ını bul
+        const postsGrid = writingsPreview.querySelector('.posts-grid');
+        if (postsGrid && latestPosts.length > 0) {
+          // Mevcut içeriği temizle
+          postsGrid.innerHTML = '';
+
+          // Her yazı için yeni kart oluştur
+          latestPosts.forEach(post => {
+            const tag = post.querySelector('.post-tag')?.innerText || 'General';
+            const date = post.querySelector('.post-date')?.innerText || '';
+            const title = post.querySelector('.writing-title')?.innerText || '';
+            const excerpt = post.querySelector('.writing-excerpt')?.innerText || '';
+            const link = post.getAttribute('href') || 'post.html';
+
+            const card = document.createElement('a');
+            card.className = 'post-card';
+            card.href = link;
+            card.innerHTML = `
+              <div class="post-meta">
+                <span class="post-tag">${tag}</span>
+                <span class="post-date">${date}</span>
+              </div>
+              <h3 class="post-title">${title}</h3>
+              <p class="post-excerpt">${excerpt.substring(0, 120)}${excerpt.length > 120 ? '...' : ''}</p>
+              <span class="post-read">Read more →</span>
+            `;
+            postsGrid.appendChild(card);
+          });
+        }
+      })
+      .catch(error => console.log('Auto update failed:', error));
+  }
 })();
