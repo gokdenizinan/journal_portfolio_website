@@ -139,51 +139,59 @@
   });
 
   /* ============================================================
-   AUTO UPDATE LATEST WRITINGS ON HOMEPAGE
-   ============================================================ */
-  // Sadece ana sayfada çalışsın (writings preview bölümü varsa)
+     AUTO UPDATE LATEST WRITINGS ON HOMEPAGE
+     ============================================================ */
   const writingsPreview = document.getElementById('writings-preview');
   if (writingsPreview) {
-    fetch('writings.html')
+    fetch('writings.html?t=' + Date.now()) // Cache önleme
       .then(response => response.text())
       .then(html => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
-        const writingRows = doc.querySelectorAll('.writing-row');
+        const writingRows = doc.querySelectorAll('.writing-row:not(.hidden)');
 
-        // En fazla 3 yazıyı al
-        const latestPosts = Array.from(writingRows).slice(0, 3);
-
-        // posts-grid container'ını bul
         const postsGrid = writingsPreview.querySelector('.posts-grid');
-        if (postsGrid && latestPosts.length > 0) {
+        if (postsGrid) {
           // Mevcut içeriği temizle
           postsGrid.innerHTML = '';
 
-          // Her yazı için yeni kart oluştur
-          latestPosts.forEach(post => {
-            const tag = post.querySelector('.post-tag')?.innerText || 'General';
-            const date = post.querySelector('.post-date')?.innerText || '';
-            const title = post.querySelector('.writing-title')?.innerText || '';
-            const excerpt = post.querySelector('.writing-excerpt')?.innerText || '';
-            const link = post.getAttribute('href') || 'post.html';
-
-            const card = document.createElement('a');
-            card.className = 'post-card';
-            card.href = link;
-            card.innerHTML = `
-              <div class="post-meta">
-                <span class="post-tag">${tag}</span>
-                <span class="post-date">${date}</span>
+          if (writingRows.length === 0) {
+            // Hiç yazı yoksa mesaj göster
+            postsGrid.innerHTML = `
+              <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--ink-3);">
+                <p>📝 No posts yet. They are on their way!</p>
               </div>
-              <h3 class="post-title">${title}</h3>
-              <p class="post-excerpt">${excerpt.substring(0, 120)}${excerpt.length > 120 ? '...' : ''}</p>
-              <span class="post-read">Read more →</span>
             `;
-            postsGrid.appendChild(card);
-          });
+          } else {
+            // En fazla 3 yazıyı göster
+            const latestPosts = Array.from(writingRows).slice(0, 3);
+            latestPosts.forEach(post => {
+              const tag = post.querySelector('.post-tag')?.innerText || 'General';
+              const date = post.querySelector('.post-date')?.innerText || '';
+              const title = post.querySelector('.writing-title')?.innerText || '';
+              const excerpt = post.querySelector('.writing-excerpt')?.innerText || '';
+              const link = post.getAttribute('href') || 'post.html';
+
+              const card = document.createElement('a');
+              card.className = 'post-card';
+              card.href = link;
+              card.innerHTML = `
+                <div class="post-meta">
+                  <span class="post-tag">${tag}</span>
+                  <span class="post-date">${date}</span>
+                </div>
+                <h3 class="post-title">${title}</h3>
+                <p class="post-excerpt">${excerpt.substring(0, 120)}${excerpt.length > 120 ? '...' : ''}</p>
+                <span class="post-read">Read more →</span>
+              `;
+              postsGrid.appendChild(card);
+            });
+          }
         }
       })
-      .catch(error => console.log('Auto update failed:', error));
+      .catch(error => {
+        console.log('Auto update failed:', error);
+        // Hata durumunda mevcut içeriği temizleme (isteğe bağlı)
+      });
   }
 })();
