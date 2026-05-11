@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">GI</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="writings.html">Writings</a>
+      <a href="index.html#about">About</a>
+      <a href="cv.html" class="active">CV</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#work">Work</a>
+    <a href="writings.html">Writings</a>
+    <a href="index.html#about">About</a>
+    <a href="cv.html">CV</a>
+  </div>
+
+  <!-- CV HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <span class="section-label reveal-up" style="--d:0ms">Curriculum Vitae</span>
+      <h1 class="page-title reveal-up" style="--d:80ms">Gökdeniz İnan</h1>
+      <p class="page-sub reveal-up" style="--d:160ms">Developer · Writer · Wageningen — <a href="mailto:gokdeniz.inan@sabanciuniv.edu">Mail</a></p>
+      <a href="#" class="btn-primary reveal-up" style="--d:240ms" download>Download PDF ↓</a>
+    </div>
+  </header>
+
+  <div class="cv-body">
+    <div class="container container-narrow">
+
+      <!-- EXPERIENCE -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Experience</h2>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div>
+              <h3 class="cv-role">Senior Software Developer</h3>
+              <span class="cv-company">Company Name</span>
+            </div>
+            <span class="cv-period">2023 — Present</span>
+          </div>
+          <p class="cv-desc">What you did, what you built, what impact it had. Keep it specific and outcome-focused. Technologies used, team size, scale.</p>
+          <div class="cv-skills-inline">
+            <span>React</span><span>TypeScript</span><span>Node.js</span>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div>
+              <h3 class="cv-role">Software Developer</h3>
+              <span class="cv-company">Previous Company</span>
+            </div>
+            <span class="cv-period">2021 — 2023</span>
+          </div>
+          <p class="cv-desc">What you did, what you built, what impact it had. Keep it specific and outcome-focused. Technologies used, team size, scale.</p>
+          <div class="cv-skills-inline">
+            <span>Python</span><span>Django</span><span>PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div>
+              <h3 class="cv-role">Junior Developer</h3>
+              <span class="cv-company">First Company</span>
+            </div>
+            <span class="cv-period">2019 — 2021</span>
+          </div>
+          <p class="cv-desc">Early career role — what you worked on and what you learned.</p>
+          <div class="cv-skills-inline">
+            <span>JavaScript</span><span>HTML/CSS</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Education</h2>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <div>
+              <h3 class="cv-role">BSc Computer Science</h3>
+              <span class="cv-company">University Name</span>
+            </div>
+            <span class="cv-period">2015 — 2019</span>
+          </div>
+          <p class="cv-desc">Relevant courses, thesis, any notable achievements.</p>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h4>Languages</h4>
+            <p>JavaScript, TypeScript, Python, SQL, Bash</p>
+          </div>
+          <div class="skill-group">
+            <h4>Frontend</h4>
+            <p>React, Next.js, HTML, CSS, Tailwind</p>
+          </div>
+          <div class="skill-group">
+            <h4>Backend</h4>
+            <p>Node.js, FastAPI, Django, REST, GraphQL</p>
+          </div>
+          <div class="skill-group">
+            <h4>Infrastructure</h4>
+            <p>Docker, PostgreSQL, Redis, AWS, Vercel</p>
+          </div>
+          <div class="skill-group">
+            <h4>Tools</h4>
+            <p>Git, Linux, Figma, VS Code</p>
+          </div>
+          <div class="skill-group">
+            <h4>Languages (spoken)</h4>
+            <p>English (fluent), [Your Language] (native)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- WRITING -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Writing</h2>
+        <p>I publish technical and conceptual essays on this site, covering topics in technology, economics, and systems design. <a href="writings.html">Read them here →</a></p>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">Your Name</span>
+        <div class="footer-links">
+          <a href="https://github.com/gokdenizinan" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/gökdeniz-inan-0769b6203" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:gokdeniz.inan@sabanciuniv.edu">Email</a>
+        </div>
+        <span class="footer-copy">© 2025</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

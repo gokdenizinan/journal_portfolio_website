@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How DNS Resolution Actually Works — Gökdeniz İnan</title>
+  <meta name="description" content="Every time you type a URL, a fascinating lookup chain unfolds. Here's what really happens." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">GI</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="writings.html" class="active">Writings</a>
+      <a href="index.html#about">About</a>
+      <a href="cv.html">CV</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#work">Work</a>
+    <a href="writings.html">Writings</a>
+    <a href="index.html#about">About</a>
+    <a href="cv.html">CV</a>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="container container-narrow">
+      <a href="writings.html" class="back-link reveal-up" style="--d:0ms">← Back to writings</a>
+      <div class="post-header-meta reveal-up" style="--d:60ms">
+        <span class="post-tag">Technology</span>
+        <span class="post-date">May 12, 2025</span>
+        <span class="post-read-time">5 min read</span>
+      </div>
+      <h1 class="post-heading reveal-up" style="--d:120ms">How DNS Resolution Actually Works: From Browser to IP</h1>
+      <p class="post-lede reveal-up" style="--d:180ms">Every time you type a URL, a fascinating lookup chain unfolds invisibly. Here's what really happens in those milliseconds between hitting Enter and your browser receiving a response.</p>
+    </div>
+  </header>
+
+  <!-- POST CONTENT -->
+  <article class="post-content">
+    <div class="container container-narrow">
+
+      <h2>The problem DNS solves</h2>
+      <p>Computers communicate using IP addresses — numeric labels like <code>93.184.216.34</code>. Humans communicate using names like <code>example.com</code>. DNS is the system that bridges these two worlds, acting as the internet's phonebook.</p>
+      <p>But unlike a phonebook, DNS is distributed across millions of servers worldwide, with no single authority holding all the answers. This is what makes it both resilient and fascinating.</p>
+
+      <h2>The lookup chain</h2>
+      <p>When you type a URL, the following happens — and it happens in milliseconds:</p>
+
+      <div class="callout">
+        <strong>Step 1: Local cache check</strong><br>
+        Your browser first checks its own DNS cache. If you visited this domain recently, the answer is already stored locally and the lookup ends here.
+      </div>
+
+      <p>If the cache misses, the request goes to your operating system's resolver — which checks its own cache, and then the <code>/etc/hosts</code> file (a local override table).</p>
+
+      <div class="callout">
+        <strong>Step 2: Recursive resolver</strong><br>
+        Your OS sends the query to a recursive resolver — typically operated by your ISP or a public service like Cloudflare (1.1.1.1) or Google (8.8.8.8). This resolver does the heavy lifting on your behalf.
+      </div>
+
+      <h2>Root servers and the hierarchy</h2>
+      <p>If the recursive resolver doesn't have a cached answer, it begins a descent through the DNS hierarchy:</p>
+      <ol>
+        <li>It asks one of 13 <strong>root name servers</strong> — which don't know the final answer, but know who to ask next.</li>
+        <li>The root server returns the address of the <strong>TLD name server</strong> for <code>.com</code>, <code>.org</code>, etc.</li>
+        <li>The TLD server returns the <strong>authoritative name server</strong> for the specific domain.</li>
+        <li>The authoritative server finally returns the actual IP address.</li>
+      </ol>
+
+      <p>This entire chain — root → TLD → authoritative — is called <em>iterative resolution</em>. The resolver does each step itself, rather than asking each server to do the lookup for it.</p>
+
+      <h2>Why it's fast</h2>
+      <p>DNS responses include a <strong>TTL (Time to Live)</strong> value — the number of seconds a resolver should cache the answer. A TTL of 3600 means the answer is cached for an hour. This aggressive caching is what makes DNS fast at scale. The root servers only handle a fraction of the world's DNS traffic because resolvers cache their responses for days.</p>
+
+      <div class="callout">
+        <strong>Key insight:</strong> DNS is a distributed caching system that degrades gracefully. Even if some servers are unreachable, queries find alternative paths through the hierarchy.
+      </div>
+
+      <h2>What I found interesting</h2>
+      <p>Before digging into this, I assumed DNS was a simple lookup table. The reality — a hierarchy of authoritative servers, with caching at every layer, resilient to individual failures — is a much more elegant distributed system. It was designed in 1983 and still scales to handle trillions of queries a day.</p>
+      <p>There's a lesson here about good system design: solve the right problem simply, let caching do the scaling work, and distribute authority so no single point can fail everything.</p>
+
+    </div>
+  </article>
+
+  <!-- NEXT ARTICLES -->
+  <section class="related-posts">
+    <div class="container">
+      <span class="section-label">More Writings</span>
+      <div class="posts-grid posts-grid-2">
+        <a href="post.html" class="post-card">
+          <div class="post-meta">
+            <span class="post-tag">Economics</span>
+            <span class="post-date">Apr 2025</span>
+          </div>
+          <h3 class="post-title">The Mechanism Behind Central Bank Interest Rate Decisions</h3>
+          <span class="post-read">8 min read →</span>
+        </a>
+        <a href="post.html" class="post-card">
+          <div class="post-meta">
+            <span class="post-tag">Technology</span>
+            <span class="post-date">Mar 2025</span>
+          </div>
+          <h3 class="post-title">WebSockets vs HTTP: Why Real-Time Apps Need a Different Model</h3>
+          <span class="post-read">6 min read →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">Gökdeniz İnan</span>
+        <div class="footer-links">
+          <a href="https://github.com/gokdenizinan" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/gökdeniz-inan-0769b6203" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:gokdeniz.inan@sabanciuniv.edu">Email</a>
+        </div>
+        <span class="footer-copy">© 2025</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

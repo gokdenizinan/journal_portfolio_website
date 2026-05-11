@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writings — Gökdeniz İnan</title>
+  <meta name="description" content="Deep-dives on technology, economics, and how systems work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">GI</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="writings.html" class="active">Writings</a>
+      <a href="index.html#about">About</a>
+      <a href="cv.html">CV</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#work">Work</a>
+    <a href="writings.html">Writings</a>
+    <a href="index.html#about">About</a>
+    <a href="cv.html">CV</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <span class="section-label reveal-up" style="--d:0ms">Writings</span>
+      <h1 class="page-title reveal-up" style="--d:80ms">Things I've learned,<br><em>written down.</em></h1>
+      <p class="page-sub reveal-up" style="--d:160ms">Deep-dives on technology, economics, and the mechanisms behind the systems we use every day.</p>
+    </div>
+  </header>
+
+  <!-- FILTER TABS -->
+  <div class="filter-bar">
+    <div class="container">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Technology">Technology</button>
+        <button class="filter-btn" data-filter="Economics">Economics</button>
+        <button class="filter-btn" data-filter="Systems">Systems</button>
+        <button class="filter-btn" data-filter="Open Source">Open Source</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- POSTS LIST -->
+  <section class="writings-list">
+    <div class="container">
+
+      <a href="post.html" class="writing-row" data-category="Technology">
+        <div class="writing-meta">
+          <span class="post-tag">Technology</span>
+          <span class="post-date">May 2025</span>
+        </div>
+        <div class="writing-body">
+          <h2 class="writing-title">How DNS Resolution Actually Works: From Browser to IP</h2>
+          <p class="writing-excerpt">Every time you type a URL, a fascinating lookup chain unfolds invisibly. Here's what really happens in those milliseconds between hitting Enter and your browser receiving a response.</p>
+        </div>
+        <span class="writing-arrow">→</span>
+      </a>
+
+      <a href="post.html" class="writing-row" data-category="Economics">
+        <div class="writing-meta">
+          <span class="post-tag">Economics</span>
+          <span class="post-date">Apr 2025</span>
+        </div>
+        <div class="writing-body">
+          <h2 class="writing-title">The Mechanism Behind Central Bank Interest Rate Decisions</h2>
+          <p class="writing-excerpt">Interest rates feel abstract until you understand how they propagate through the economy — from policy meeting to your mortgage. A systems-level breakdown.</p>
+        </div>
+        <span class="writing-arrow">→</span>
+      </a>
+
+      <a href="post.html" class="writing-row" data-category="Technology">
+        <div class="writing-meta">
+          <span class="post-tag">Technology</span>
+          <span class="post-date">Mar 2025</span>
+        </div>
+        <div class="writing-body">
+          <h2 class="writing-title">WebSockets vs HTTP: Why Real-Time Apps Need a Different Model</h2>
+          <p class="writing-excerpt">The request-response cycle breaks down for live data. Here's the architecture shift that makes chat apps, dashboards, and live feeds possible.</p>
+        </div>
+        <span class="writing-arrow">→</span>
+      </a>
+
+      <a href="post.html" class="writing-row" data-category="Systems">
+        <div class="writing-meta">
+          <span class="post-tag">Systems</span>
+          <span class="post-date">Feb 2025</span>
+        </div>
+        <div class="writing-body">
+          <h2 class="writing-title">Supply Chains as Distributed Systems: Lessons from Software</h2>
+          <p class="writing-excerpt">Global logistics and distributed computing share more than you'd think — from CAP theorem analogies to failure mode patterns.</p>
+        </div>
+        <span class="writing-arrow">→</span>
+      </a>
+
+      <a href="post.html" class="writing-row" data-category="Open Source">
+        <div class="writing-meta">
+          <span class="post-tag">Open Source</span>
+          <span class="post-date">Jan 2025</span>
+        </div>
+        <div class="writing-body">
+          <h2 class="writing-title">How Git's Merkle Tree Makes History Tamper-Proof</h2>
+          <p class="writing-excerpt">Git isn't just a version control tool — it's a cryptographic data structure. Understanding the tree changes how you think about commits.</p>
+        </div>
+        <span class="writing-arrow">→</span>
+      </a>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">Gökdeniz İnan</span>
+        <div class="footer-links">
+          <a href="https://github.com/gokdenizinan" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/gökdeniz-inan-0769b6203" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:gokdeniz.inan@sabanciuniv.edu">Email</a>
+        </div>
+        <span class="footer-copy">© 2025</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
