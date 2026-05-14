@@ -815,6 +815,7 @@ ol, ul { list-style: none; }
   line-height: 1.7;
 }
 .cv-list li { margin-bottom: 6px; }
+.cv-list-standalone { margin-top: -8px; }
 .cv-skills-inline {
   display: flex;
   gap: 8px;
@@ -827,6 +828,21 @@ ol, ul { list-style: none; }
   color: var(--ink-3);
   border: 1px solid var(--line);
   padding: 3px 8px;
+  border-radius: 2px;
+}
+.cv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cv-tags span {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6c552b;
+  border: 1px solid rgba(200, 169, 110, 0.38);
+  background: var(--accent-soft);
+  padding: 5px 10px;
   border-radius: 2px;
 }
 .skills-grid {
