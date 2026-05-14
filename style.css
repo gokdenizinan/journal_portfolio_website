@@ -807,6 +807,14 @@ ol, ul { list-style: none; }
   line-height: 1.7;
   margin-bottom: 12px;
 }
+.cv-list {
+  list-style: disc;
+  padding-left: 20px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+.cv-list li { margin-bottom: 6px; }
 .cv-skills-inline {
   display: flex;
   gap: 8px;
