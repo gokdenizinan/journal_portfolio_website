@@ -415,7 +415,7 @@ ol, ul { list-style: none; }
 .project-number {
   font-family: var(--font-display);
   font-size: 0.875rem;
-  color: rgba(255,255,255,0.2);
+  color: rgba(245, 243, 239, 0.58);
   padding-top: 6px;
 }
 .project-tags {
@@ -428,8 +428,8 @@ ol, ul { list-style: none; }
   font-size: 0.6875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(245, 243, 239, 0.72);
+  border: 1px solid rgba(245, 243, 239, 0.28);
   padding: 3px 8px;
   border-radius: 2px;
 }
@@ -442,7 +442,7 @@ ol, ul { list-style: none; }
 }
 .project-desc {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(245, 243, 239, 0.72);
   max-width: 520px;
   line-height: 1.65;
 }
