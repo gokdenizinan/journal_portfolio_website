@@ -477,14 +477,47 @@ ol, ul { list-style: none; }
   margin-top: 16px;
 }
 .about-title em { font-style: italic; }
+#about {
+  background: var(--night);
+  color: var(--paper);
+}
+#about .section-label {
+  color: rgba(245, 243, 239, 0.64);
+}
+#about .about-title {
+  color: var(--paper);
+}
 .about-right p {
   font-size: 1.0625rem;
   color: var(--ink-2);
   line-height: 1.75;
   margin-bottom: 20px;
 }
+#about .about-right p {
+  color: rgba(245, 243, 239, 0.72);
+}
+#about .about-right p strong {
+  color: var(--paper);
+  font-weight: 500;
+}
 .about-right p strong { color: var(--ink); font-weight: 500; }
 .about-links { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
+#about .btn-primary {
+  background: var(--paper);
+  color: var(--night);
+  border-color: var(--paper);
+}
+#about .btn-primary:hover {
+  background: var(--paper-2);
+  border-color: var(--paper-2);
+}
+#about .btn-ghost {
+  color: var(--paper);
+  border-color: rgba(245, 243, 239, 0.28);
+}
+#about .btn-ghost:hover {
+  border-color: rgba(245, 243, 239, 0.76);
+}
 
 /* ============================================================
    PAGE HEADER (writings / cv)
