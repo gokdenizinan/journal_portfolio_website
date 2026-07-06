@@ -727,12 +727,15 @@ ol, ul { list-style: none; }
   line-height: 1.8;
   margin-bottom: 20px;
 }
-.post-content ol {
+.post-content ol,
+.post-content ul {
   list-style: decimal;
   padding-left: 24px;
   margin-bottom: 20px;
 }
-.post-content ol li {
+.post-content ul { list-style: disc; }
+.post-content ol li,
+.post-content ul li {
   font-size: 1.0625rem;
   color: var(--ink-2);
   line-height: 1.8;
