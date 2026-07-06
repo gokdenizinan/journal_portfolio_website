@@ -665,6 +665,56 @@ ol, ul { list-style: none; }
 }
 .writing-row:hover .writing-arrow { transform: translate(4px, -4px); }
 
+.writing-section-heading {
+  margin-bottom: 28px;
+}
+
+.small-notes-section {
+  padding: 0 0 96px;
+}
+.small-notes-preview {
+  padding-top: 0;
+}
+.small-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.small-note-card {
+  min-height: 180px;
+  background: var(--paper-2);
+  border: 1px solid rgba(14, 14, 14, 0.06);
+  border-radius: 6px;
+  padding: 28px;
+}
+.small-note-kicker {
+  display: inline-block;
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6c552b;
+  border: 1px solid rgba(200, 169, 110, 0.38);
+  background: var(--accent-soft);
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+.small-note-card h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.8vw, 1.65rem);
+  line-height: 1.22;
+  margin-bottom: 12px;
+}
+.small-note-card p {
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  max-width: 560px;
+}
+.small-note-card-empty {
+  grid-column: 1 / -1;
+}
+
 /* ============================================================
    POST PAGE
    ============================================================ */
@@ -1026,6 +1076,7 @@ ol, ul { list-style: none; }
   .nav-toggle { display: flex; }
   .mobile-menu { display: flex; }
   .posts-grid, .posts-grid-2 { grid-template-columns: 1fr; }
+  .small-notes-grid { grid-template-columns: 1fr; }
   .writing-row {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
