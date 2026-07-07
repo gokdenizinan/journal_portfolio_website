@@ -669,7 +669,7 @@ ol, ul { list-style: none; }
 /* ============================================================
    WRITINGS LIST
    ============================================================ */
-.writings-list { padding: 0 0 80px; }
+.writings-list { padding: 56px 0 72px; }
 
 .writing-row {
   display: grid;
@@ -709,11 +709,13 @@ ol, ul { list-style: none; }
 .writing-row:hover .writing-arrow { transform: translate(4px, -4px); }
 
 .writing-section-heading {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
 }
 
 .small-notes-section {
-  padding: 0 0 96px;
+  padding: 56px 0 72px;
 }
 .small-notes-grid {
   display: grid;
