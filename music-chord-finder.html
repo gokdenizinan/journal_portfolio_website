@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Chord Finder — Gökdeniz İnan</title>
+  <link rel="icon" type="image/svg+xml" href="website_logo.svg">
+  <meta name="description" content="A Python command-line app for identifying basic chords from musical notes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">GI</a>
+    <div class="nav-links">
+      <a href="index.html#work" class="active">Work</a>
+      <a href="writings.html">Writings</a>
+      <a href="index.html#about">About</a>
+      <a href="cv.html">CV</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#work">Work</a>
+    <a href="writings.html">Writings</a>
+    <a href="index.html#about">About</a>
+    <a href="cv.html">CV</a>
+  </div>
+
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <header class="post-header">
+    <div class="container container-narrow">
+      <a href="index.html#work" class="back-link reveal-up" style="--d:0ms">← Back to projects</a>
+      <div class="post-header-meta reveal-up" style="--d:60ms">
+        <span class="post-tag">Python</span>
+        <span class="post-tag">CLI</span>
+        <span class="post-tag">Music Theory</span>
+        <span class="post-tag">Software Engineering</span>
+        <span class="post-date">Version 1 in progress</span>
+      </div>
+      <h1 class="post-heading reveal-up" style="--d:120ms">Music Chord Finder</h1>
+      <p class="post-lede reveal-up" style="--d:180ms">A Python command-line app for identifying basic chords from musical notes.</p>
+      <div class="post-actions reveal-up" style="--d:240ms">
+        <a href="https://github.com/gokdenizinan/music-chord-finder.git" class="btn-primary" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <article class="post-content">
+    <div class="container container-narrow">
+
+      <h2>Overview</h2>
+      <p>Music Chord Finder is a small Python command-line project that takes musical notes as input and identifies whether they form a major, minor, diminished, or augmented chord.</p>
+      <p>The project currently lives in one main file, <code>chord_finder.py</code>. The goal is not to make a complete music theory tool yet. Version 1 is focused on clean beginner-friendly software engineering, Python fundamentals, and simple music theory logic.</p>
+
+      <h2>Why I Built It</h2>
+      <p>I wanted to connect programming with music theory. While learning how chords work, especially intervals and inversions, I used this project to turn that understanding into code.</p>
+      <p>Instead of only memorizing chord names, I wanted to model the logic behind them: notes become numbers, intervals become patterns, and those patterns can be checked by a program.</p>
+
+      <h2>What Version 1 Can Do</h2>
+      <ul>
+        <li>Accept notes from the terminal.</li>
+        <li>Normalize user input.</li>
+        <li>Work with sharp notes.</li>
+        <li>Convert notes into numbers.</li>
+        <li>Calculate intervals from possible roots.</li>
+        <li>Match interval patterns against basic chord types.</li>
+        <li>Recognize inversions.</li>
+        <li>Handle invalid notes gracefully.</li>
+      </ul>
+
+      <h2>Core Logic</h2>
+      <p>A chord is identified not just by note names, but by the distances between notes. For example, <strong>C E G</strong> becomes <strong>0, 4, 7</strong>, which matches the major chord pattern.</p>
+      <p>To support inversions, the program tests each note as a possible root. That way, notes like <strong>E G C</strong> can still be understood as a C major chord, even though C is not the first note entered.</p>
+
+      <h2>Technical Concepts Practiced</h2>
+      <ul>
+        <li>Python dictionaries.</li>
+        <li>Functions.</li>
+        <li>Input parsing.</li>
+        <li>Validation.</li>
+        <li>Modular design.</li>
+        <li>Pattern matching.</li>
+        <li>Separation of responsibilities.</li>
+        <li>Command-line interaction.</li>
+      </ul>
+
+      <h2>Current Limitations</h2>
+      <ul>
+        <li>Flats are not supported yet.</li>
+        <li>Seventh, ninth, eleventh, and thirteenth chords are not supported yet.</li>
+        <li>The project is CLI-only.</li>
+        <li>There is no Django or web interface yet.</li>
+        <li>It is an educational Version 1 project.</li>
+      </ul>
+
+      <h2>Future Improvements</h2>
+      <ul>
+        <li>Add flat note support.</li>
+        <li>Add seventh and extended chords.</li>
+        <li>Improve error messages.</li>
+        <li>Add tests.</li>
+        <li>Add a small web interface later.</li>
+        <li>Possibly turn it into an interactive music theory learning tool.</li>
+      </ul>
+
+      <h2>Project Status</h2>
+      <p><strong>Status:</strong> Version 1 in progress.</p>
+      <p>This is a small but meaningful learning project. It is intentionally limited, but it already captures the core idea: basic chord recognition can be expressed clearly through intervals, patterns, and careful input handling.</p>
+
+      <div class="related-link-card">
+        <span class="small-note-kicker">Related Writing</span>
+        <h2>The music theory behind future versions</h2>
+        <p>This project started from my attempt to understand chords more deeply. I also wrote about how seventh, ninth, and eleventh chords work, which may become the theory foundation for future versions of this project.</p>
+        <a href="music-theory-chords.html" class="btn-primary">Read the music theory article</a>
+      </div>
+
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">Gökdeniz İnan</span>
+        <div class="footer-links">
+          <a href="https://github.com/gokdenizinan" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/gökdeniz-inan-0769b6203" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:gokdeniz.inan@sabanciuniv.edu">Email</a>
+        </div>
+        <span class="footer-copy">© 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -760,6 +760,12 @@ ol, ul { list-style: none; }
   line-height: 1.7;
   max-width: 600px;
 }
+.post-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
 
 .post-content {
   padding: 72px 0;
@@ -920,6 +926,26 @@ ol, ul { list-style: none; }
   font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+.related-link-card {
+  background: var(--paper-2);
+  border: 1px solid rgba(14, 14, 14, 0.08);
+  border-radius: 6px;
+  padding: 28px;
+  margin: 48px 0 8px;
+}
+.post-content .related-link-card h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  line-height: 1.22;
+  margin: 0 0 14px;
+  color: var(--ink);
+}
+.related-link-card p {
+  max-width: 680px;
+}
+.related-link-card .btn-primary {
+  margin-top: 6px;
 }
 
 .related-posts { padding: 80px 0; border-top: 1px solid var(--line); }
