@@ -437,6 +437,13 @@ ol, ul { list-style: none; }
    PROJECTS LIST
    ============================================================ */
 .projects-list { display: flex; flex-direction: column; }
+#work .section-header {
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+#work .project-item:first-child {
+  padding-top: 16px;
+}
 
 .project-item {
   display: grid;
