@@ -426,23 +426,46 @@ ol, ul { list-style: none; }
   line-height: 1.65;
 }
 .post-read {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
   font-size: 0.8125rem;
-  color: var(--ink-3);
+  color: #6c552b;
+  border: 1px solid rgba(200, 169, 110, 0.42);
+  background: rgba(200, 169, 110, 0.12);
+  border-radius: 3px;
   margin-top: auto;
-  transition: color 0.2s;
+  transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.2s;
 }
-.post-card:hover .post-read { color: var(--ink); }
+.post-card:hover .post-read {
+  color: var(--ink);
+  background: rgba(200, 169, 110, 0.22);
+  border-color: rgba(200, 169, 110, 0.62);
+  transform: translateY(-2px);
+}
+#writings-preview,
+.small-notes-preview,
+#work {
+  padding: 72px 0;
+}
+#writings-preview .section-header,
+.small-notes-preview .section-header,
+#work .section-header {
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+}
 
 /* ============================================================
    PROJECTS LIST
    ============================================================ */
 .projects-list { display: flex; flex-direction: column; }
-#work .section-header {
-  margin-bottom: 8px;
-  padding-bottom: 12px;
-}
 #work .project-item:first-child {
-  padding-top: 16px;
+  padding-top: 32px;
+}
+#work .project-item:last-child {
+  padding-bottom: 32px;
 }
 
 .project-item {
@@ -503,12 +526,25 @@ ol, ul { list-style: none; }
   padding-top: 6px;
 }
 .project-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 112px;
+  padding: 8px 12px;
   font-size: 0.8125rem;
-  color: rgba(245, 243, 239, 0.72);
-  transition: color 0.2s;
+  color: var(--paper);
+  border: 1px solid rgba(245, 243, 239, 0.28);
+  background: rgba(245, 243, 239, 0.055);
+  border-radius: 3px;
+  transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.2s;
   white-space: nowrap;
 }
-.project-link:hover { color: var(--accent); }
+.project-link:hover {
+  color: var(--night);
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
 
 /* ============================================================
    ABOUT
@@ -678,9 +714,6 @@ ol, ul { list-style: none; }
 
 .small-notes-section {
   padding: 0 0 96px;
-}
-.small-notes-preview {
-  padding-top: 0;
 }
 .small-notes-grid {
   display: grid;
