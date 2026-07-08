@@ -734,9 +734,9 @@ ol, ul { list-style: none; }
 .writing-updates-notice {
   display: inline-flex;
   align-items: center;
-  color: #6c552b;
-  background: var(--accent-soft);
-  border: 1px solid rgba(200, 169, 110, 0.38);
+  color: #8f2d25;
+  background: #f7e7e3;
+  border: 1px solid rgba(143, 45, 37, 0.28);
   border-radius: 3px;
   padding: 8px 10px;
   font-weight: 500;
