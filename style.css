@@ -954,26 +954,7 @@ ol, ul { list-style: none; }
   display: inline-block;
   flex: 0 0 18px;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at center, transparent 0 44%, #1ed760 45%),
-    #1ed760;
-  position: relative;
-}
-.spotify-mark::before,
-.spotify-mark::after {
-  content: '';
-  position: absolute;
-  left: 4px;
-  width: 10px;
-  height: 5px;
-  border-top: 1.6px solid #0e0e0e;
-  border-radius: 50%;
-  transform: rotate(9deg);
-}
-.spotify-mark::before { top: 5px; }
-.spotify-mark::after {
-  top: 8px;
-  width: 8px;
+  background: url('spotify-logo.png') center / cover no-repeat;
 }
 .callout {
   background: var(--paper-2);
@@ -1233,23 +1214,8 @@ ol, ul { list-style: none; }
   background: var(--platform);
   position: relative;
 }
-.spotify-logo::before,
-.spotify-logo::after {
-  content: '';
-  position: absolute;
-  left: 14px;
-  height: 8px;
-  border-top: 3px solid #0e0e0e;
-  border-radius: 50%;
-  transform: rotate(9deg);
-}
-.spotify-logo::before {
-  top: 19px;
-  width: 29px;
-}
-.spotify-logo::after {
-  top: 28px;
-  width: 22px;
+.spotify-logo {
+  background: url('spotify-logo.png') center / cover no-repeat;
 }
 .deezer-logo {
   border-radius: 8px;
