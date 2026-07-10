@@ -44,6 +44,59 @@ img { display: block; max-width: 100%; }
 ol, ul { list-style: none; }
 
 /* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor input,
+  body.has-custom-cursor textarea {
+    cursor: none;
+  }
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0);
+    transition: opacity 0.18s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    will-change: transform;
+  }
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 1px rgba(14, 14, 14, 0.14);
+  }
+  .cursor-ring {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(200, 169, 110, 0.72);
+    border-radius: 50%;
+    background: rgba(200, 169, 110, 0.08);
+    mix-blend-mode: multiply;
+  }
+  body.cursor-visible .cursor-dot,
+  body.cursor-visible .cursor-ring {
+    opacity: 1;
+  }
+  body.cursor-hovering .cursor-ring {
+    width: 54px;
+    height: 54px;
+    border-color: rgba(143, 45, 37, 0.38);
+    background: rgba(143, 45, 37, 0.08);
+  }
+  body.cursor-hovering .cursor-dot {
+    background: #8f2d25;
+  }
+}
+
+/* ============================================================
    UTILITY
    ============================================================ */
 .container {
