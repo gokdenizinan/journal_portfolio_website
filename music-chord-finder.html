@@ -43,7 +43,7 @@
         <span class="post-tag">Python</span>
         <span class="post-tag">CLI</span>
         <span class="post-tag">Music Theory</span>
-        <span class="post-date">Version 1 in progress</span>
+        <span class="post-date">Version 1 complete · Version 2 in progress</span>
       </div>
       <h1 class="post-heading reveal-up" style="--d:120ms">Music Chord Finder</h1>
       <p class="post-lede reveal-up" style="--d:180ms">A Python command-line app for identifying basic chords from musical notes.</p>
@@ -58,13 +58,13 @@
 
       <h2>Overview</h2>
       <p>Music Chord Finder is a small Python command-line project that takes musical notes as input and identifies whether they form a major, minor, diminished, or augmented chord.</p>
-      <p>The project currently lives in one main file, <code>chord_finder.py</code>. The goal is not to make a complete music theory tool yet. Version 1 is focused on clean beginner-friendly software engineering, Python fundamentals, and simple music theory logic.</p>
+      <p>The project currently lives in one main file, <code>chord_finder.py</code>. The goal is not to make a complete music theory tool yet. Version 1 is complete and focuses on clean function design, user input handling, chord logic, and a simple command-line experience.</p>
 
       <h2>Why I Built It</h2>
       <p>I wanted to connect programming with music theory. While learning how chords work, especially intervals and inversions, I used this project to turn that understanding into code.</p>
       <p>Instead of only memorizing chord names, I wanted to model the logic behind them: notes become numbers, intervals become patterns, and those patterns can be checked by a program.</p>
 
-      <h2>What Version 1 Can Do</h2>
+      <h2>What Version 1 Does</h2>
       <ul>
         <li>Accept notes from the terminal.</li>
         <li>Normalize user input.</li>
@@ -76,20 +76,28 @@
         <li>Handle invalid notes gracefully.</li>
       </ul>
 
+      <h2>Example</h2>
+      <p>If the user enters:</p>
+      <p><code>C E G</code></p>
+      <p>the program can identify the result as:</p>
+      <p><strong>C major</strong></p>
+      <p>It also supports inversions. For example, <code>E G C</code> can still be recognized as <strong>C major</strong>, because the program tests each note as a possible root.</p>
+
       <h2>Core Logic</h2>
       <p>A chord is identified not just by note names, but by the distances between notes. For example, <strong>C E G</strong> becomes <strong>0, 4, 7</strong>, which matches the major chord pattern.</p>
       <p>To support inversions, the program tests each note as a possible root. That way, notes like <strong>E G C</strong> can still be understood as a C major chord, even though C is not the first note entered.</p>
 
-      <h2>Technical Concepts Practiced</h2>
+      <h2>Version 2 Focus</h2>
+      <p>Version 2 is about improving the command-line experience without changing the core chord logic too much.</p>
       <ul>
-        <li>Python dictionaries.</li>
-        <li>Functions.</li>
-        <li>Input parsing.</li>
-        <li>Validation.</li>
-        <li>Modular design.</li>
-        <li>Pattern matching.</li>
-        <li>Separation of responsibilities.</li>
-        <li>Command-line interaction.</li>
+        <li>Cleaner welcome screen.</li>
+        <li>Clearer input instructions.</li>
+        <li>Example inputs before the user types.</li>
+        <li>Better formatting for successful chord results.</li>
+        <li>Better formatting for invalid notes and no-match cases.</li>
+        <li>Optional repeated input loop.</li>
+        <li>Optional exit commands such as <code>q</code> or <code>quit</code>.</li>
+        <li>Optional help command and supported chord type display.</li>
       </ul>
 
       <h2>Current Limitations</h2>
@@ -98,21 +106,20 @@
         <li>Seventh, ninth, eleventh, and thirteenth chords are not supported yet.</li>
         <li>The project is CLI-only.</li>
         <li>There is no Django or web interface yet.</li>
-        <li>It is an educational Version 1 project.</li>
+        <li>It is still intentionally small and educational.</li>
       </ul>
 
-      <h2>Future Improvements</h2>
+      <h2>Roadmap</h2>
       <ul>
-        <li>Add flat note support.</li>
-        <li>Add seventh and extended chords.</li>
-        <li>Improve error messages.</li>
-        <li>Add tests.</li>
-        <li>Add a small web interface later.</li>
-        <li>Possibly turn it into an interactive music theory learning tool.</li>
+        <li><strong>v1.0:</strong> Basic chord finder with major, minor, diminished, augmented, inversions, sharp notes, and invalid note handling. Completed.</li>
+        <li><strong>v2.0:</strong> Better CLI experience with clearer instructions, repeated input, exit/help commands, and better result formatting. In progress.</li>
+        <li><strong>v3.0:</strong> Flats support, including notes such as <code>Bb</code>, <code>Eb</code>, and <code>Ab</code>.</li>
+        <li><strong>v4.0:</strong> Extended chords such as sevenths, ninths, elevenths, and possibly thirteenths.</li>
+        <li><strong>Future:</strong> A simple web app, possibly with Django, for a more user-friendly interface.</li>
       </ul>
 
       <h2>Project Status</h2>
-      <p><strong>Status:</strong> Version 1 in progress.</p>
+      <p><strong>Status:</strong> Version 1 complete. Version 2 is in progress.</p>
       <p>This is a small but meaningful learning project. It is intentionally limited, but it already captures the core idea: basic chord recognition can be expressed clearly through intervals, patterns, and careful input handling.</p>
 
       <div class="related-link-card">
