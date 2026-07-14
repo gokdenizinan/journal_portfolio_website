@@ -91,6 +91,21 @@
   }
 
   /* ============================================================
+     PROJECT ORDER — newest first by first published date
+     ============================================================ */
+  const projectsList = document.querySelector('.projects-list');
+  if (projectsList) {
+    const datedProjects = [...projectsList.querySelectorAll('.project-item[data-published]')];
+    datedProjects
+      .sort((a, b) => new Date(b.dataset.published) - new Date(a.dataset.published))
+      .forEach((project, index) => {
+        const number = project.querySelector('.project-number');
+        if (number) number.textContent = String(index + 1).padStart(2, '0');
+        projectsList.appendChild(project);
+      });
+  }
+
+  /* ============================================================
      REVEAL ON SCROLL — IntersectionObserver, no layout thrash
      ============================================================ */
   const revealItems = document.querySelectorAll('.reveal-up');
