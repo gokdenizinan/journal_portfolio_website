@@ -566,6 +566,35 @@ ol, ul { list-style: none; }
   color: #f0ede8;
   margin-bottom: 14px;
 }
+.project-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.project-title-row .project-title {
+  margin-bottom: 0;
+}
+.project-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border: 1px solid rgba(200, 169, 110, 0.38);
+  background: rgba(200, 169, 110, 0.14);
+  border-radius: 6px;
+  position: relative;
+}
+.project-icon::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  background: var(--accent);
+  mask: var(--project-icon) center / contain no-repeat;
+  -webkit-mask: var(--project-icon) center / contain no-repeat;
+}
+.momentum-grids-icon {
+  --project-icon: url('momentum-grids-icon.svg');
+}
 .project-desc {
   font-size: 0.975rem;
   color: rgba(245, 243, 239, 0.78);
