@@ -15,61 +15,6 @@
   }
 
   /* ============================================================
-     CUSTOM CURSOR
-     ============================================================ */
-  const canUseCustomCursor = window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
-    window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
-
-  if (canUseCustomCursor) {
-    const dot = document.createElement('div');
-    const ring = document.createElement('div');
-    dot.className = 'cursor-dot';
-    ring.className = 'cursor-ring';
-    document.body.append(ring, dot);
-    document.body.classList.add('has-custom-cursor');
-
-    let mouseX = 0;
-    let mouseY = 0;
-    let ringX = 0;
-    let ringY = 0;
-
-    const moveCursor = event => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
-      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-      document.body.classList.add('cursor-visible');
-    };
-
-    const animateRing = () => {
-      ringX += (mouseX - ringX) * 0.18;
-      ringY += (mouseY - ringY) * 0.18;
-      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
-      requestAnimationFrame(animateRing);
-    };
-
-    const hoverTargets = 'a, button, input, textarea, .post-card, .project-item, .writing-row, .music-card, .small-note-card, .cv-item';
-
-    window.addEventListener('pointermove', moveCursor, { passive: true });
-    document.addEventListener('pointerover', event => {
-      const target = event.target.closest(hoverTargets);
-      if (target && !target.contains(event.relatedTarget)) {
-        document.body.classList.add('cursor-hovering');
-      }
-    });
-    document.addEventListener('pointerout', event => {
-      const target = event.target.closest(hoverTargets);
-      if (target && !target.contains(event.relatedTarget)) {
-        document.body.classList.remove('cursor-hovering');
-      }
-    });
-    document.addEventListener('mouseleave', () => {
-      document.body.classList.remove('cursor-visible', 'cursor-hovering');
-    });
-
-    animateRing();
-  }
-
-  /* ============================================================
      MOBILE MENU TOGGLE
      ============================================================ */
   const toggle = document.querySelector('.nav-toggle');
@@ -170,6 +115,42 @@
           row.classList.toggle('hidden', !show);
         });
       });
+    });
+  }
+
+  /* ============================================================
+     WRITING UPDATES CONFIRMATION
+     ============================================================ */
+  const writingUpdatesForm = document.querySelector('.writing-updates-form');
+  if (writingUpdatesForm) {
+    const emailInput = writingUpdatesForm.querySelector('input[name="email"]');
+    const notice = document.getElementById('writingUpdatesNotice');
+    const submittedEmail = notice?.querySelector('[data-submitted-email]');
+    let lastSubmittedEmail = '';
+    let lastSubmittedAt = 0;
+    const duplicateWindowMs = 60 * 1000;
+
+    writingUpdatesForm.addEventListener('submit', event => {
+      if (!emailInput || !notice || !submittedEmail) return;
+
+      const email = emailInput.value.trim();
+      if (!emailInput.checkValidity()) return;
+
+      const normalizedEmail = email.toLowerCase();
+      const now = Date.now();
+      const isDuplicate = normalizedEmail === lastSubmittedEmail &&
+        now - lastSubmittedAt < duplicateWindowMs;
+
+      if (isDuplicate) {
+        event.preventDefault();
+      } else {
+        lastSubmittedEmail = normalizedEmail;
+        lastSubmittedAt = now;
+      }
+
+      submittedEmail.textContent = email;
+      notice.hidden = false;
+      notice.focus({ preventScroll: true });
     });
   }
 

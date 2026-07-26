@@ -65,12 +65,21 @@
         <form class="writing-updates-form embeddable-buttondown-form" action="https://buttondown.com/api/emails/embed-subscribe/gokdenizinan" method="post" target="_blank">
           <label for="writingUpdatesEmail">Email address</label>
           <div class="writing-updates-row">
-            <input id="writingUpdatesEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+            <input id="writingUpdatesEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" aria-describedby="writingUpdatesNotice" required>
             <input type="hidden" value="1" name="embed">
             <input type="hidden" value="website-writings" name="tag">
             <button type="submit" class="btn-primary">Notify me</button>
           </div>
-          <p class="writing-updates-status writing-updates-notice">Even if it says you subscribed, confirm it by email. Check spam or promotions if needed.</p>
+          <div class="writing-updates-confirmation" id="writingUpdatesNotice" role="status" aria-live="polite" aria-labelledby="writingUpdatesNoticeTitle" hidden tabindex="-1">
+            <div class="writing-updates-confirmation-icon" aria-hidden="true">
+              <span></span>
+            </div>
+            <div class="writing-updates-confirmation-body">
+              <span class="writing-updates-eyebrow">Email confirmation required</span>
+              <h3 id="writingUpdatesNoticeTitle">One more step—check your inbox</h3>
+              <p>We sent a confirmation link to <strong data-submitted-email></strong>. Open it to complete your subscription and start receiving new writing. Check Spam or Promotions if it does not arrive.</p>
+            </div>
+          </div>
         </form>
       </div>
     </div>
