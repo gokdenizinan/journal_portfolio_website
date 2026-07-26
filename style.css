@@ -736,6 +736,12 @@ ol, ul { list-style: none; }
   display: flex;
   gap: 10px;
 }
+.writing-updates-helper {
+  margin: -2px 0 12px;
+  color: var(--ink-2);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
 .writing-updates-row input[type="email"] {
   width: 100%;
   min-width: 0;
@@ -834,6 +840,9 @@ ol, ul { list-style: none; }
   color: var(--ink);
   font-weight: 500;
   overflow-wrap: anywhere;
+}
+.writing-updates-frame {
+  display: none;
 }
 
 /* ============================================================
