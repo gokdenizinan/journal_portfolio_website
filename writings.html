@@ -62,26 +62,14 @@
           <h2>Get new writings in your inbox.</h2>
           <p>Leave your email and Buttondown will notify you when I publish a new essay or note.</p>
         </div>
-        <form class="writing-updates-form embeddable-buttondown-form" action="https://buttondown.com/api/emails/embed-subscribe/gokdenizinan" method="post" target="_blank">
-          <label for="writingUpdatesEmail">Email address</label>
-          <p class="writing-updates-helper" id="writingUpdatesHelper">After you click Notify me, Buttondown may open in a new tab. Come back here and check your inbox to finish subscribing.</p>
-          <div class="writing-updates-row">
-            <input id="writingUpdatesEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" aria-describedby="writingUpdatesHelper writingUpdatesNotice" required>
-            <input type="hidden" value="1" name="embed">
-            <input type="hidden" value="website-writings" name="tag">
-            <button type="submit" class="btn-primary">Notify me</button>
+        <div class="writing-updates-cta" aria-labelledby="writingUpdatesTitle">
+          <span class="writing-updates-eyebrow">Handled by Buttondown</span>
+          <h3 id="writingUpdatesTitle">Subscribe from the official page</h3>
+          <p>Buttondown handles the signup, spam check, and confirmation email there. After subscribing, open the confirmation link in your inbox to start receiving new writing.</p>
+          <div class="writing-updates-actions">
+            <a class="btn-primary" href="https://buttondown.com/gokdenizinan#subscribe-form" target="_blank" rel="noopener">Subscribe on Buttondown</a>
           </div>
-          <div class="writing-updates-confirmation" id="writingUpdatesNotice" role="status" aria-live="polite" aria-labelledby="writingUpdatesNoticeTitle" hidden tabindex="-1">
-            <div class="writing-updates-confirmation-icon" aria-hidden="true">
-              <span></span>
-            </div>
-            <div class="writing-updates-confirmation-body">
-              <span class="writing-updates-eyebrow">Email confirmation required</span>
-              <h3 id="writingUpdatesNoticeTitle">One more step—check your inbox</h3>
-              <p>We sent a confirmation link to <strong data-submitted-email></strong>. Open it to complete your subscription and start receiving new writing. Check Spam or Promotions if it does not arrive.</p>
-            </div>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   </section>

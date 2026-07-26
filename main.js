@@ -119,42 +119,6 @@
   }
 
   /* ============================================================
-     WRITING UPDATES CONFIRMATION
-     ============================================================ */
-  const writingUpdatesForm = document.querySelector('.writing-updates-form');
-  if (writingUpdatesForm) {
-    const emailInput = writingUpdatesForm.querySelector('input[name="email"]');
-    const notice = document.getElementById('writingUpdatesNotice');
-    const submittedEmail = notice?.querySelector('[data-submitted-email]');
-    let lastSubmittedEmail = '';
-    let lastSubmittedAt = 0;
-    const duplicateWindowMs = 60 * 1000;
-
-    writingUpdatesForm.addEventListener('submit', event => {
-      if (!emailInput || !notice || !submittedEmail) return;
-
-      const email = emailInput.value.trim();
-      if (!emailInput.checkValidity()) return;
-
-      const normalizedEmail = email.toLowerCase();
-      const now = Date.now();
-      const isDuplicate = normalizedEmail === lastSubmittedEmail &&
-        now - lastSubmittedAt < duplicateWindowMs;
-
-      if (isDuplicate) {
-        event.preventDefault();
-      } else {
-        lastSubmittedEmail = normalizedEmail;
-        lastSubmittedAt = now;
-      }
-
-      submittedEmail.textContent = email;
-      notice.hidden = false;
-      notice.focus({ preventScroll: true });
-    });
-  }
-
-  /* ============================================================
      READING PROGRESS BAR (post page)
      ============================================================ */
   const progressBar = document.getElementById('readingProgress');
