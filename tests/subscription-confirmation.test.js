@@ -26,8 +26,8 @@ test('confirmation notice includes the required confirmation copy and email plac
 
 test('subscribers are told to stay on the site before submitting', () => {
   assert.match(html, /id="writingUpdatesHelper"/);
-  assert.match(html, /keep this tab open/i);
-  assert.match(html, /The confirmation step will appear below/);
+  assert.match(html, /Buttondown may open in a new tab/);
+  assert.match(html, /Come back here and check your inbox to finish subscribing/);
   assert.match(html, /aria-describedby="writingUpdatesHelper writingUpdatesNotice"/);
 });
 
@@ -46,8 +46,8 @@ test('invalid email handling remains native and unchanged', () => {
 test('provider POST integration is preserved without claiming completion locally', () => {
   assert.match(html, /action="https:\/\/buttondown\.com\/api\/emails\/embed-subscribe\/gokdenizinan"/);
   assert.match(html, /method="post"/);
-  assert.match(html, /target="buttondownSubscribeFrame"/);
-  assert.match(html, /<iframe class="writing-updates-frame" name="buttondownSubscribeFrame"/);
+  assert.match(html, /target="_blank"/);
+  assert.doesNotMatch(html, /buttondownSubscribeFrame/);
   assert.match(html, /name="embed"/);
   assert.doesNotMatch(html, /subscription is complete/i);
   assert.doesNotMatch(html, /successfully subscribed/i);
@@ -66,7 +66,7 @@ test('resend action is not rendered because the static provider flow does not su
 test('notice has responsive classes and mobile-safe layout', () => {
   assert.match(css, /\.writing-updates-confirmation \{/);
   assert.match(css, /\.writing-updates-helper \{/);
-  assert.match(css, /\.writing-updates-frame \{[\s\S]*display: none;/);
+  assert.doesNotMatch(css, /\.writing-updates-frame/);
   assert.match(css, /overflow-wrap: anywhere/);
   assert.match(css, /@media \(max-width: 680px\)[\s\S]*\.writing-updates-confirmation \{[\s\S]*grid-template-columns: 1fr;/);
 });

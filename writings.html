@@ -62,9 +62,9 @@
           <h2>Get new writings in your inbox.</h2>
           <p>Leave your email and Buttondown will notify you when I publish a new essay or note.</p>
         </div>
-        <form class="writing-updates-form embeddable-buttondown-form" action="https://buttondown.com/api/emails/embed-subscribe/gokdenizinan" method="post" target="buttondownSubscribeFrame">
+        <form class="writing-updates-form embeddable-buttondown-form" action="https://buttondown.com/api/emails/embed-subscribe/gokdenizinan" method="post" target="_blank">
           <label for="writingUpdatesEmail">Email address</label>
-          <p class="writing-updates-helper" id="writingUpdatesHelper">After you click Notify me, keep this tab open. The confirmation step will appear below.</p>
+          <p class="writing-updates-helper" id="writingUpdatesHelper">After you click Notify me, Buttondown may open in a new tab. Come back here and check your inbox to finish subscribing.</p>
           <div class="writing-updates-row">
             <input id="writingUpdatesEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" aria-describedby="writingUpdatesHelper writingUpdatesNotice" required>
             <input type="hidden" value="1" name="embed">
@@ -82,7 +82,6 @@
             </div>
           </div>
         </form>
-        <iframe class="writing-updates-frame" name="buttondownSubscribeFrame" title="Buttondown subscription response"></iframe>
       </div>
     </div>
   </section>

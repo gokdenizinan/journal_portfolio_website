@@ -841,9 +841,6 @@ ol, ul { list-style: none; }
   font-weight: 500;
   overflow-wrap: anywhere;
 }
-.writing-updates-frame {
-  display: none;
-}
 
 /* ============================================================
    WRITINGS LIST
