@@ -36,11 +36,13 @@ test('article uses British spelling and avoids the requested American spelling',
 });
 
 test('article includes the requested public-key math note', () => {
+  assert.match(articleHtml, /Small math note <span class="math-symbol" aria-hidden="true">∑<\/span>:/);
   assert.match(articleHtml, /Apple uses elliptic curve public key cryptography/);
   assert.match(articleHtml, /I will update this writing when that part is ready/);
 });
 
 test('article links to the rough notes PDF and mentions later math PDF', () => {
+  assert.match(articleHtml, /<h2><span class="math-symbol" aria-hidden="true">∑<\/span> Rough notes and mechanism sketches<\/h2>/);
   assert.match(articleHtml, /Rough notes and mechanism sketches/);
   assert.match(articleHtml, /href="airtag-mechanism-notes\.pdf"/);
   assert.match(articleHtml, /The separate math PDF is still in progress and will be added later/);

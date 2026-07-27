@@ -980,6 +980,22 @@ ol, ul { list-style: none; }
   border-radius: 0 4px 4px 0;
 }
 .callout strong { color: var(--ink); }
+.math-symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.45em;
+  height: 1.45em;
+  margin-right: 0.2em;
+  color: #6c552b;
+  background: var(--accent-soft);
+  border: 1px solid rgba(200, 169, 110, 0.38);
+  border-radius: 50%;
+  font-family: Georgia, serif;
+  font-size: 0.8em;
+  line-height: 1;
+  vertical-align: 0.08em;
+}
 .pdf-attachment {
   display: grid;
   grid-template-columns: 72px 1fr;
