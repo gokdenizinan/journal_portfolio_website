@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Gökdeniz İnan</title>
+  <meta name="description" content="The requested page could not be found." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/svg+xml" href="website_logo.svg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">GI</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="writings.html">Writings</a>
+      <a href="music.html">Music</a>
+      <a href="index.html#about">About</a>
+      <a href="cv.html">CV</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#work">Work</a>
+    <a href="writings.html">Writings</a>
+    <a href="music.html">Music</a>
+    <a href="index.html#about">About</a>
+    <a href="cv.html">CV</a>
+  </div>
+
+  <main class="not-found-page">
+    <section class="not-found-shell container">
+      <div class="not-found-card reveal-up">
+        <div class="not-found-status" aria-hidden="true">
+          <span>GET</span>
+          <strong>/missing-page</strong>
+          <em>404 Not Found</em>
+        </div>
+
+        <span class="small-note-kicker">Page not found</span>
+        <h1>404: This page wandered off.</h1>
+        <p class="not-found-copy">The site is alive. The path just does not point anywhere useful.</p>
+
+        <div class="not-found-note">
+          <span class="not-found-note-label">Small note</span>
+          <p>404 comes from HTTP status codes. The first 4 means the problem is on the client/request side, and 04 identifies &ldquo;not found&rdquo;.</p>
+        </div>
+
+        <div class="not-found-actions" aria-label="Helpful links">
+          <a href="index.html" class="btn-primary">Go home</a>
+          <a href="writings.html" class="btn-ghost">Read writings</a>
+          <a href="index.html#work" class="btn-ghost">View projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">Gökdeniz İnan</span>
+        <div class="footer-links">
+          <a href="https://github.com/gokdenizinan" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/gökdeniz-inan-0769b6203" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:gokdeniz.inan@sabanciuniv.edu">Email</a>
+        </div>
+        <span class="footer-copy">© 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
