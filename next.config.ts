@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next';
 
 const isDevelopment = process.env.NODE_ENV === 'development';
+const isVercel = process.env.VERCEL === '1';
 
 const nextConfig: NextConfig = {
   images: {
@@ -15,7 +16,9 @@ const nextConfig: NextConfig = {
           ];
         },
       }
-    : { output: 'export' }),
+    : isVercel
+      ? {}
+      : { output: 'export' }),
 };
 
 export default nextConfig;
