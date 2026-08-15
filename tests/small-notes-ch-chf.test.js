@@ -17,6 +17,8 @@ test('CH and CHF small note page exists with correct metadata', () => {
 test('CH and CHF small note explains the origin clearly', () => {
   assert.match(noteHtml, /The <code>CH<\/code> comes from <em>Confoederatio Helvetica<\/em>/);
   assert.match(noteHtml, /German, French, Italian, and Romansh/);
+  assert.match(noteHtml, /<em>Helvetica<\/em> here means something like "Helvetian" or "Swiss"/);
+  assert.match(noteHtml, /ultimately to the Helvetii, a Celtic tribe/);
   assert.match(noteHtml, /<code>CH<\/code> identifies Switzerland and <code>F<\/code> stands for franc/);
   assert.match(noteHtml, /Confoederatio Helvetica Franc/);
   assert.match(noteHtml, /country code <code>CH<\/code> plus <code>F<\/code> for franc/);
@@ -33,5 +35,6 @@ test('CH and CHF small note is linked from small notes sections', () => {
 test('CH and CHF small note includes source links and clickable card styling', () => {
   assert.match(noteHtml, /href="https:\/\/www\.iso\.org\/iso-4217-currency-codes\.html"/);
   assert.match(noteHtml, /href="https:\/\/www\.swissinfo\.ch\/eng\/demographics\/facts-about-switzerland\/29050470"/);
+  assert.match(noteHtml, /href="https:\/\/www\.nb\.admin\.ch\/en\/helvetia-en"/);
   assert.match(css, /a\.small-note-card:hover/);
 });
