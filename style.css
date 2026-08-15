@@ -965,7 +965,6 @@ a.small-note-card:hover {
   gap: 16px;
   margin-bottom: 24px;
 }
-.post-read-time { font-size: 0.75rem; color: var(--ink-3); }
 .post-heading {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4.5vw, 3.75rem);
