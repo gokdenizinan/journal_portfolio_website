@@ -1,49 +1,46 @@
-const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const test = require('node:test');
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import test from 'node:test';
 
-const indexHtml = fs.readFileSync('index.html', 'utf8');
-const writingsHtml = fs.readFileSync('writings.html', 'utf8');
-const articleHtml = fs.readFileSync('how-airtag-works.html', 'utf8');
+const homePage = fs.readFileSync('app/page.tsx', 'utf8');
+const writingsPage = fs.readFileSync('app/writings/page.tsx', 'utf8');
+const articleMarkdown = fs.readFileSync('content/writings/how-airtag-works.md', 'utf8');
+const writingRoute = fs.readFileSync('app/[slug]/page.tsx', 'utf8');
 
 test('AirTag article page exists with correct metadata', () => {
-  assert.match(articleHtml, /<title>How AirTag Works\? — Gökdeniz İnan<\/title>/);
-  assert.match(articleHtml, /<span class="post-tag">Technology<\/span>/);
-  assert.match(articleHtml, /<span class="post-date">Jul 27, 2026<\/span>/);
-  assert.match(articleHtml, /<h1 class="post-heading reveal-up"[^>]*>How AirTag Works\?<\/h1>/);
+  assert.match(articleMarkdown, /title: "How AirTag Works\?"/);
+  assert.match(articleMarkdown, /category: "Technology"/);
+  assert.match(articleMarkdown, /displayDate: "Jul 27, 2026"/);
+  assert.match(writingRoute, /generateStaticParams/);
 });
 
 test('AirTag article is listed first on the writings page', () => {
-  const firstWriting = writingsHtml.match(/<a href="([^"]+)" class="writing-row"/);
-
-  assert.equal(firstWriting?.[1], 'how-airtag-works.html');
-  assert.match(writingsHtml, /<button class="filter-btn" data-filter="Technology">Technology<\/button>/);
-  assert.match(writingsHtml, /<a href="how-airtag-works\.html" class="writing-row" data-category="Technology">/);
+  assert.match(writingsPage, /getEssays\(\)/);
+  assert.match(writingsPage, /<WritingsArchive essays=\{essays\}/);
+  assert.match(articleMarkdown, /date: "2026-07-27"/);
 });
 
 test('AirTag article is listed first in latest writings on the homepage', () => {
-  const firstCard = indexHtml.match(/<a href="([^"]+)" class="post-card">/);
-
-  assert.equal(firstCard?.[1], 'how-airtag-works.html');
-  assert.match(indexHtml, /<h3 class="post-title">How AirTag Works\?<\/h3>/);
+  assert.match(homePage, /getLatestFeaturedEssays\(3\)/);
+  assert.match(articleMarkdown, /featured: true/);
 });
 
 test('article uses British spelling and avoids the requested American spelling', () => {
-  assert.match(articleHtml, /metres/);
-  assert.match(articleHtml, /recognises/);
-  assert.match(articleHtml, /summarise/);
-  assert.doesNotMatch(articleHtml, /utilize|meter away|recognizes|summarize/);
+  assert.match(articleMarkdown, /metres/);
+  assert.match(articleMarkdown, /recognises/);
+  assert.match(articleMarkdown, /summarise/);
+  assert.doesNotMatch(articleMarkdown, /utilize|meter away|recognizes|summarize/);
 });
 
 test('article includes the requested public-key math note', () => {
-  assert.match(articleHtml, /Small math note <span class="math-symbol" aria-hidden="true">∑<\/span>:/);
-  assert.match(articleHtml, /Apple uses elliptic curve public key cryptography/);
-  assert.match(articleHtml, /I will update this writing when that part is ready/);
+  assert.match(articleMarkdown, /Small math note <span class="math-symbol" aria-hidden="true">∑<\/span>:/);
+  assert.match(articleMarkdown, /Apple uses elliptic curve public key cryptography/);
+  assert.match(articleMarkdown, /I will update this writing when that part is ready/);
 });
 
 test('article links to the rough notes PDF and mentions later math PDF', () => {
-  assert.match(articleHtml, /<h2><span class="math-symbol" aria-hidden="true">∑<\/span> Rough notes and mechanism sketches<\/h2>/);
-  assert.match(articleHtml, /Rough notes and mechanism sketches/);
-  assert.match(articleHtml, /href="airtag-mechanism-notes\.pdf"/);
-  assert.match(articleHtml, /The separate math PDF is still in progress and will be added later/);
+  assert.match(articleMarkdown, /<h2><span class="math-symbol" aria-hidden="true">∑<\/span> Rough notes and mechanism sketches<\/h2>/);
+  assert.match(articleMarkdown, /Rough notes and mechanism sketches/);
+  assert.match(articleMarkdown, /href="airtag-mechanism-notes\.pdf"/);
+  assert.match(articleMarkdown, /The separate math PDF is still in progress and will be added later/);
 });

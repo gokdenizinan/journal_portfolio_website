@@ -1,40 +1,38 @@
-const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const test = require('node:test');
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import test from 'node:test';
 
-const indexHtml = fs.readFileSync('index.html', 'utf8');
-const writingsHtml = fs.readFileSync('writings.html', 'utf8');
-const noteHtml = fs.readFileSync('why-switzerland-uses-ch-and-chf.html', 'utf8');
-const css = fs.readFileSync('style.css', 'utf8');
+const homePage = fs.readFileSync('app/page.tsx', 'utf8');
+const writingsPage = fs.readFileSync('app/writings/page.tsx', 'utf8');
+const noteMarkdown = fs.readFileSync('content/writings/why-switzerland-uses-ch-and-chf.md', 'utf8');
+const css = fs.readFileSync('app/globals.css', 'utf8');
 
 test('CH and CHF small note page exists with correct metadata', () => {
-  assert.match(noteHtml, /<title>Why Switzerland Uses CH and CHF — Gökdeniz İnan<\/title>/);
-  assert.match(noteHtml, /<span class="post-tag">Small Note<\/span>/);
-  assert.match(noteHtml, /<span class="post-date">Aug 15, 2026<\/span>/);
-  assert.match(noteHtml, /<h1 class="post-heading reveal-up"[^>]*>Why Switzerland Uses CH and CHF<\/h1>/);
+  assert.match(noteMarkdown, /title: "Why Switzerland Uses CH and CHF"/);
+  assert.match(noteMarkdown, /slug: "why-switzerland-uses-ch-and-chf"/);
+  assert.match(noteMarkdown, /displayDate: "Aug 15, 2026"/);
+  assert.match(noteMarkdown, /kind: "note"/);
 });
 
 test('CH and CHF small note explains the origin clearly', () => {
-  assert.match(noteHtml, /The <code>CH<\/code> comes from <em>Confoederatio Helvetica<\/em>/);
-  assert.match(noteHtml, /German, French, Italian, and Romansh/);
-  assert.match(noteHtml, /<em>Helvetica<\/em> here means something like "Helvetian" or "Swiss"/);
-  assert.match(noteHtml, /ultimately to the Helvetii, a Celtic tribe/);
-  assert.match(noteHtml, /<code>CH<\/code> identifies Switzerland and <code>F<\/code> stands for franc/);
-  assert.match(noteHtml, /Confoederatio Helvetica Franc/);
-  assert.match(noteHtml, /country code <code>CH<\/code> plus <code>F<\/code> for franc/);
+  assert.match(noteMarkdown, /The <code>CH<\/code> comes from <em>Confoederatio Helvetica<\/em>/);
+  assert.match(noteMarkdown, /German, French, Italian, and Romansh/);
+  assert.match(noteMarkdown, /<em>Helvetica<\/em> here means something like "Helvetian" or "Swiss"/);
+  assert.match(noteMarkdown, /ultimately to the Helvetii, a Celtic tribe/);
+  assert.match(noteMarkdown, /<code>CH<\/code> identifies Switzerland and <code>F<\/code> stands for franc/);
+  assert.match(noteMarkdown, /Confoederatio Helvetica Franc/);
+  assert.match(noteMarkdown, /country code <code>CH<\/code> plus <code>F<\/code> for franc/);
 });
 
 test('CH and CHF small note is linked from small notes sections', () => {
-  assert.match(indexHtml, /<a href="why-switzerland-uses-ch-and-chf\.html" class="small-note-card small-note-card-empty">/);
-  assert.match(writingsHtml, /<a href="why-switzerland-uses-ch-and-chf\.html" class="small-note-card small-note-card-empty">/);
-  assert.match(indexHtml, /<h2>Why Switzerland Uses CH and CHF<\/h2>/);
-  assert.match(writingsHtml, /<h2>Why Switzerland Uses CH and CHF<\/h2>/);
-  assert.doesNotMatch(writingsHtml, /Coming soon/);
+  assert.match(homePage, /getSmallNotes\(\)\[0\]/);
+  assert.match(writingsPage, /notes\.map/);
+  assert.doesNotMatch(writingsPage, /Coming soon/);
 });
 
 test('CH and CHF small note includes source links and clickable card styling', () => {
-  assert.match(noteHtml, /href="https:\/\/www\.iso\.org\/iso-4217-currency-codes\.html"/);
-  assert.match(noteHtml, /href="https:\/\/www\.swissinfo\.ch\/eng\/demographics\/facts-about-switzerland\/29050470"/);
-  assert.match(noteHtml, /href="https:\/\/www\.nb\.admin\.ch\/en\/helvetia-en"/);
+  assert.match(noteMarkdown, /href="https:\/\/www\.iso\.org\/iso-4217-currency-codes\.html"/);
+  assert.match(noteMarkdown, /href="https:\/\/www\.swissinfo\.ch\/eng\/demographics\/facts-about-switzerland\/29050470"/);
+  assert.match(noteMarkdown, /href="https:\/\/www\.nb\.admin\.ch\/en\/helvetia-en"/);
   assert.match(css, /a\.small-note-card:hover/);
 });

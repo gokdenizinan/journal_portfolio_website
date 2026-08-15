@@ -1,0 +1,147 @@
+---
+title: "How Major, Minor, Augmented, and Diminished Chords Work"
+slug: "major-minor-augmented-diminished-chords"
+date: "2026-07-08"
+displayDate: "Jul 8, 2026"
+listDate: "Jul 2026"
+description: "A clear explanation of how basic chord types are built from roots, thirds, fifths, and half-step patterns."
+category: "Music Theory"
+kind: "essay"
+featured: true
+---
+<p>Before talking about augmented and diminished chords, I would like to state the difference between major and minor chords.</p>
+      <p>What makes major and minor special is their difference in the third position.</p>
+      <p>We call a chord <strong>major</strong> because it adds four half steps on top of the root for the third position. We call a chord <strong>minor</strong> because it adds three half steps on top of the root.</p>
+      <p>So major has one extra half step compared to minor in the third position. That is why we call it major, because it is bigger. And we call it minor, because it is smaller in the third position.</p>
+      <p>They are the same in the fifth position, which is defined by adding seven half steps on top of the root position.</p>
+      <p>So the basic formulas are:</p>
+      <ul>
+        <li><strong>Major:</strong> root + 4 half steps + 7 half steps</li>
+        <li><strong>Minor:</strong> root + 3 half steps + 7 half steps</li>
+      </ul>
+      <p>Now that we understand the difference between major and minor, we can build on this knowledge and understand augmented and diminished chords.</p>
+
+      <h2>Augmented Chords</h2>
+      <p>For augmented chords, we can look at the word's individual meaning.</p>
+      <p><strong>Augmented</strong> means something that is developed, improved, greater, larger, or stronger in quality.</p>
+      <p>By using this definition, we can think of an augmented chord as almost the same as a major chord, but it changes at the fifth position.</p>
+      <p>And that is where the word "augmented" comes alive.</p>
+      <p>An augmented chord goes one half step up in the fifth position compared to a major chord. It is completely the same in the root and the third position.</p>
+      <p>So the formula is:</p>
+      <ul>
+        <li><strong>Augmented:</strong> root + 4 half steps + 8 half steps</li>
+      </ul>
+      <p>For example, if we take C augmented:</p>
+      <ul>
+        <li>C is the root</li>
+        <li>E is the major third</li>
+        <li>G sharp is the augmented fifth</li>
+      </ul>
+      <p>So C augmented is:</p>
+      <p><strong>C, E, G sharp</strong></p>
+
+      <h2>Diminished Chords</h2>
+      <p>For diminished chords, we can also get help from the word's meaning.</p>
+      <p><strong>Diminished</strong> means something that is weakened, smaller in quality, or lessened in value or intensity.</p>
+      <p>But the key difference is that we now see a change in both the third and fifth positions.</p>
+      <p>Compared to a major chord, a diminished chord goes one half step down in the third position and one half step down in the fifth position.</p>
+      <p>So instead of having four half steps for the third position, we now have three half steps.</p>
+      <p>And instead of having seven half steps for the fifth position, we now have six half steps.</p>
+      <p>So the formula is:</p>
+      <ul>
+        <li><strong>Diminished:</strong> root + 3 half steps + 6 half steps</li>
+      </ul>
+      <p>For example, C diminished would be:</p>
+      <p><strong>C, E flat, G flat</strong></p>
+      <p>So those are basically how major, minor, augmented, and diminished chords are built.</p>
+
+      <h2>Their Characteristics</h2>
+      <p>Major chords create an atmosphere of happiness and brightness.</p>
+      <p>Minor chords tend to have more sad and dark vibes.</p>
+      <p>Augmented chords are more tense and mysterious because of their half step increase in the fifth position.</p>
+      <p>Diminished chords are a bit scary and unstable because of their half step decrease in both the third and fifth positions.</p>
+      <p>So, to give you an easier shortcut:</p>
+      <ul>
+        <li><strong>Major and minor</strong> refer mainly to the degree of the third position.</li>
+        <li>In major and minor chords, the fifth position is the same.</li>
+        <li><strong>Augmented</strong> refers to a half step increase in the fifth position compared to major.</li>
+        <li><strong>Diminished</strong> refers to a half step decrease in both the third and fifth positions compared to major.</li>
+      </ul>
+
+      <h2>Fun Fact: Augmented Chords Act Like an Infinite Mirror</h2>
+      <p>For augmented chords, there is something really interesting.</p>
+      <p>They act like an infinite mirror.</p>
+      <p>If you take a C augmented chord, which is:</p>
+      <p><strong>C, E, G sharp</strong></p>
+      <p>and move the C one octave higher, you get:</p>
+      <p><strong>E, G sharp, C</strong></p>
+      <p>These are still the same three notes, but now we can also think of this as E augmented.</p>
+      <p>If you continue and move E one octave higher, you get:</p>
+      <p><strong>G sharp, C, E</strong></p>
+      <p>Again, these are the same three notes, but now we can also think of this as G sharp augmented.</p>
+      <p>So the logic behind this is that augmented chords repeat in equal steps. They are symmetrical.</p>
+      <p>For example:</p>
+      <ul>
+        <li>From C to E, there are four half steps.</li>
+        <li>From E to G sharp, there are four half steps.</li>
+        <li>From G sharp back to C, there are also four half steps.</li>
+      </ul>
+      <p>Because the chord is built from the same distance again and again, the same notes can create different augmented chords depending on which note we treat as the root.</p>
+      <p>So, in a nutshell:</p>
+      <p><strong>C augmented = E augmented = G sharp augmented</strong></p>
+      <p>They all use the same notes:</p>
+      <p><strong>C, E, G sharp</strong></p>
+      <p>This fact is used by many composers, especially impressionist composers like Debussy, because it makes it easier to jump around keys. When you are in one key and want to switch to another one, augmented chords can work like a bridge because of their symmetrical structure.</p>
+
+      <h2>Fun Fact: Fully Diminished Seventh Chords Also Have Symmetry</h2>
+      <p>For diminished chords, there is something special in the <strong>fully diminished seventh chord</strong>.</p>
+      <p>A fully diminished seventh chord is built like this:</p>
+      <p><strong>root + minor third + diminished fifth + diminished seventh</strong></p>
+      <p>The important thing here is that every note is separated by the same distance.</p>
+      <p>You constantly add three half steps to the previous note.</p>
+      <p>For example, if we take C fully diminished seventh, we get:</p>
+      <p><strong>C, E flat, G flat, B double flat</strong></p>
+      <p>B double flat sounds the same as A on the piano, so you may also see it written as:</p>
+      <p><strong>C, E flat, G flat, A</strong></p>
+      <p>This chord is symmetrical because each note is three half steps away from the next note.</p>
+      <p>So:</p>
+      <ul>
+        <li>C to E flat = 3 half steps</li>
+        <li>E flat to G flat = 3 half steps</li>
+        <li>G flat to A = 3 half steps</li>
+        <li>A back to C = 3 half steps</li>
+      </ul>
+      <p>Since the chord splits the octave into perfectly equal parts, there are four possible roots.</p>
+      <p>This is similar to the augmented example. In augmented chords, we had three possible roots because the octave was divided into three equal parts. In fully diminished seventh chords, we have four possible roots because the octave is divided into four equal parts.</p>
+      <p>You can also use the same trick as we did in augmented chords.</p>
+      <p>If you take C fully diminished seventh:</p>
+      <p><strong>C, E flat, G flat, A</strong></p>
+      <p>and move C one octave higher, you get:</p>
+      <p><strong>E flat, G flat, A, C</strong></p>
+      <p>These are the same four notes, but in a different order.</p>
+      <p>Now we can also think of it as E flat fully diminished seventh.</p>
+      <p>If you keep rotating the notes, the same chord can also be understood from different roots:</p>
+      <p><strong>C fully diminished seventh = E flat fully diminished seventh = G flat fully diminished seventh = A fully diminished seventh</strong></p>
+      <p>They all contain the same four notes, only in a different order.</p>
+      <p>That is why fully diminished seventh chords are powerful. They feel unstable, tense, and mysterious, but they also give composers a very flexible way to move between different keys.</p>
+
+      <h2>Final Shortcut</h2>
+      <p>To summarize everything:</p>
+      <ul>
+        <li><strong>Major:</strong> root + 4 + 7</li>
+        <li><strong>Minor:</strong> root + 3 + 7</li>
+        <li><strong>Augmented:</strong> root + 4 + 8</li>
+        <li><strong>Diminished:</strong> root + 3 + 6</li>
+      </ul>
+      <p>Major and minor mostly change the third.</p>
+      <p>Augmented keeps the major third but raises the fifth.</p>
+      <p>Diminished lowers both the third and the fifth.</p>
+      <p>And when we look at augmented chords and fully diminished seventh chords, we see something even more interesting: symmetry.</p>
+      <p>That symmetry is what makes them feel mysterious, unstable, and useful for moving between keys.</p>
+
+      <div class="related-link-card">
+        <span class="small-note-kicker">Related Project</span>
+        <h2>Turning these chord patterns into code</h2>
+        <p>This article connects directly to Music Chord Finder, a small Python command-line project that identifies major, minor, augmented, and diminished chords from notes entered in the terminal.</p>
+        <a href="music-chord-finder.html" class="btn-primary">View the Music Chord Finder project</a>
+      </div>
