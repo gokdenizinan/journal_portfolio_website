@@ -26,6 +26,12 @@ const markdown = new MarkdownIt({
   typographer: false,
 });
 
+function normaliseImportedHtml(content: string): string {
+  // The legacy pages indented article markup by six spaces. Markdown treats
+  // those lines as code, so remove only that shared page-level indentation.
+  return content.replace(/^ {6}/gm, '');
+}
+
 function assertWriting(data: Record<string, unknown>, filePath: string): Omit<Writing, 'html'> {
   const required = ['title', 'slug', 'date', 'displayDate', 'listDate', 'description', 'category', 'kind'];
 
@@ -64,7 +70,7 @@ export function getAllWritings(): Writing[] {
 
       return {
         ...metadata,
-        html: markdown.render(content),
+        html: markdown.render(normaliseImportedHtml(content)),
       };
     })
     .sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
