@@ -2,12 +2,13 @@ import type { NextConfig } from 'next';
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isVercel = process.env.VERCEL === '1';
+const supportsLegacyRewrites = isDevelopment || isVercel;
 
 const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  ...(isDevelopment
+  ...(supportsLegacyRewrites
     ? {
         async rewrites() {
           return [
@@ -16,9 +17,7 @@ const nextConfig: NextConfig = {
           ];
         },
       }
-    : isVercel
-      ? {}
-      : { output: 'export' }),
+    : { output: 'export' }),
 };
 
 export default nextConfig;
