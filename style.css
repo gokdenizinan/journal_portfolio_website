@@ -878,6 +878,7 @@ ol, ul { list-style: none; }
   gap: 16px;
 }
 .small-note-card {
+  display: block;
   min-height: 180px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.62)),
@@ -886,6 +887,15 @@ ol, ul { list-style: none; }
   border-radius: 8px;
   padding: 28px;
   box-shadow: 0 12px 34px rgba(17, 17, 17, 0.045);
+  transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+a.small-note-card:hover {
+  background:
+    linear-gradient(180deg, #fff, rgba(255,255,255,0.82)),
+    var(--paper-2);
+  border-color: rgba(189, 155, 95, 0.34);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
 }
 .small-note-kicker {
   display: inline-block;
