@@ -30,9 +30,9 @@ export default function NotFound() {
             <Link href="/writings.html" className="btn-ghost">
               Read writings
             </Link>
-            <Link href="/index.html#work" className="btn-ghost">
+            <a href="/index.html#work" className="btn-ghost">
               View projects
-            </Link>
+            </a>
           </div>
         </div>
       </section>

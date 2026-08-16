@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ReadingProgress } from '@/components/ReadingProgress';
 import { revealDelay } from '@/lib/styles';
@@ -53,13 +52,13 @@ export default async function WritingPage({ params }: SlugPageProps) {
       <ReadingProgress />
       <header className="post-header">
         <div className="container container-narrow">
-          <Link
+          <a
             href={writing.kind === 'note' ? '/writings.html#small-notes' : '/writings.html'}
             className="back-link reveal-up"
             style={revealDelay('0ms')}
           >
             ← Back to {writing.kind === 'note' ? 'small notes' : 'writings'}
-          </Link>
+          </a>
           <div className="post-header-meta reveal-up" style={revealDelay('60ms')}>
             <span className="post-tag">{writing.category}</span>
             <span className="post-date">{writing.displayDate}</span>

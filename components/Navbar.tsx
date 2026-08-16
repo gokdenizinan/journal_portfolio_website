@@ -5,10 +5,15 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { navItems } from '@/lib/site';
 
-function isActive(pathname: string, match: string): boolean {
-  const normalizedPathname = pathname.replace(/\.html$/, '');
+type NavItem = (typeof navItems)[number];
 
-  if (match === 'work' || match === 'about') return normalizedPathname === '/';
+function isActive(pathname: string, hash: string, match: string): boolean {
+  const normalizedPathname = pathname.replace(/\.html$/, '');
+  const isHome = normalizedPathname === '/' || normalizedPathname === '/index';
+
+  if (match === 'work' || match === 'about') {
+    return isHome && hash === `#${match}`;
+  }
   if (match === 'writings') {
     return (
       normalizedPathname === '/writings' ||
@@ -20,10 +25,36 @@ function isActive(pathname: string, match: string): boolean {
   return normalizedPathname === `/${match}`;
 }
 
+function NavigationLink({ item, active = false, onClick }: { item: NavItem; active?: boolean; onClick?: () => void }) {
+  const className = active ? 'active' : undefined;
+
+  if (item.href.includes('#')) {
+    return (
+      <a href={item.href} className={className} onClick={onClick}>
+        {item.label}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={item.href} className={className} onClick={onClick}>
+      {item.label}
+    </Link>
+  );
+}
+
 export function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeHash, setActiveHash] = useState('');
+
+  useEffect(() => {
+    const syncHash = () => setActiveHash(window.location.hash);
+    syncHash();
+    window.addEventListener('hashchange', syncHash);
+    return () => window.removeEventListener('hashchange', syncHash);
+  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 30);
@@ -47,9 +78,7 @@ export function Navbar() {
         </Link>
         <div className="nav-links">
           {navItems.map((item) => (
-            <Link key={item.label} href={item.href} className={isActive(pathname, item.match) ? 'active' : undefined}>
-              {item.label}
-            </Link>
+            <NavigationLink key={item.label} item={item} active={isActive(pathname, activeHash, item.match)} />
           ))}
         </div>
         <button
@@ -65,9 +94,7 @@ export function Navbar() {
 
       <div className={`mobile-menu${isOpen ? ' open' : ''}`} id="mobileMenu">
         {navItems.map((item) => (
-          <Link key={item.label} href={item.href} onClick={() => setIsOpen(false)}>
-            {item.label}
-          </Link>
+          <NavigationLink key={item.label} item={item} onClick={() => setIsOpen(false)} />
         ))}
       </div>
     </>
