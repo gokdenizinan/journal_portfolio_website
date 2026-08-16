@@ -8,14 +8,23 @@ type SectionHeaderProps = {
 };
 
 export function SectionHeader({ label, href, linkLabel, light = false }: SectionHeaderProps) {
-  return (
-    <div className="section-header">
-      <span className={`section-label${light ? ' light' : ''}`}>{label}</span>
-      {href && linkLabel ? (
+  const link =
+    href && linkLabel ? (
+      href.includes('#') ? (
+        <a href={href} className="section-link">
+          {linkLabel}
+        </a>
+      ) : (
         <Link href={href} className="section-link">
           {linkLabel}
         </Link>
-      ) : null}
+      )
+    ) : null;
+
+  return (
+    <div className="section-header">
+      <span className={`section-label${light ? ' light' : ''}`}>{label}</span>
+      {link}
     </div>
   );
 }

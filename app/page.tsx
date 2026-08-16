@@ -39,9 +39,9 @@ export default function HomePage() {
             <Link href="/writings.html" className="btn-primary">
               Read Writings
             </Link>
-            <Link href="/index.html#work" className="btn-ghost">
+            <a href="/index.html#work" className="btn-ghost">
               See Projects
-            </Link>
+            </a>
           </div>
         </div>
         <div className="hero-scroll">

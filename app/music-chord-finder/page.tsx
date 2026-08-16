@@ -24,9 +24,9 @@ export default function MusicChordFinderPage() {
       <ReadingProgress />
       <header className="post-header">
         <div className="container container-narrow">
-          <Link href="/index.html#work" className="back-link reveal-up" style={revealDelay('0ms')}>
+          <a href="/index.html#work" className="back-link reveal-up" style={revealDelay('0ms')}>
             ← Back to projects
-          </Link>
+          </a>
           <div className="post-header-meta reveal-up" style={revealDelay('60ms')}>
             {project.technologies.map((technology) => (
               <span className="post-tag" key={technology}>
