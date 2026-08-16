@@ -50,10 +50,27 @@ export function Navbar() {
   const [activeHash, setActiveHash] = useState('');
 
   useEffect(() => {
-    const syncHash = () => setActiveHash(window.location.hash);
+    let scrollFrame: number | undefined;
+
+    const syncHash = () => {
+      const hash = window.location.hash;
+      setActiveHash(hash);
+
+      if (!hash) return;
+
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (!target) return;
+
+      window.cancelAnimationFrame(scrollFrame ?? 0);
+      scrollFrame = window.requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+    };
+
     syncHash();
     window.addEventListener('hashchange', syncHash);
-    return () => window.removeEventListener('hashchange', syncHash);
+    return () => {
+      window.removeEventListener('hashchange', syncHash);
+      window.cancelAnimationFrame(scrollFrame ?? 0);
+    };
   }, [pathname]);
 
   useEffect(() => {
