@@ -583,6 +583,9 @@ ol, ul { list-style: none; }
 .momentum-grids-icon {
   --project-icon: url('/momentum-grids-icon.svg');
 }
+.hugselect-icon {
+  --project-icon: url('/hugselect-icon.svg');
+}
 .project-desc {
   font-size: 0.975rem;
   color: rgba(245, 243, 239, 0.78);

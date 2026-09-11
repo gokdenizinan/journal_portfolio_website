@@ -18,6 +18,7 @@ export const projects: Project[] = [
       'Research internship project: an evidence-driven Django decision-support tool for selecting Hugging Face foundation models from a 69,000-record Elasticsearch snapshot.',
     technologies: ['Python', 'Django', 'Elasticsearch', 'Decision Support'],
     githubUrl: 'https://github.com/gokdenizinan/hugselect-django-ui',
+    iconClassName: 'hugselect-icon',
     published: '2026-09-11',
     featured: true,
   },
