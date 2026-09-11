@@ -12,6 +12,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'HugSelect Django UI',
+    slug: 'hugselect-django-ui',
+    description:
+      'Research internship project: a Django interface for exploring, filtering, comparing, and explaining Hugging Face foundation model recommendations.',
+    technologies: ['Python', 'Django', 'Elasticsearch', 'Hugging Face'],
+    githubUrl: 'https://github.com/gokdenizinan/hugselect-django-ui',
+    published: '2026-09-11',
+    featured: true,
+  },
+  {
     title: 'Momentum Grids',
     description:
       'Quiet, year-at-a-glance habit tracker for building visible momentum one day at a time, with accounts, simple automation, and a heatmap-style view.',

@@ -100,6 +100,16 @@ export default function CvPage() {
             <h2 className="cv-section-title">Projects</h2>
             {[
               {
+                role: 'HugSelect Django UI',
+                company: 'Wageningen University — Python, Django, Elasticsearch, Hugging Face',
+                period: 'Summer 2026',
+                items: [
+                  'Built a Django-based interface for HugSelect, a research system for recommending Hugging Face foundation models.',
+                  'Worked with the recommendation pipeline, processed model datasets, and Elasticsearch-based search flow.',
+                  'Designed user-facing search, filtering, comparison, and explanation workflows for model recommendations.',
+                ],
+              },
+              {
                 role: 'Personalized 3D-Printed Shoe Insoles',
                 company: 'Sabanci University — Rhino3D, Grasshopper, LIDAR, 3D Printing',
                 period: 'Spring 2025',
