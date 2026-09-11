@@ -15,8 +15,8 @@ export const projects: Project[] = [
     title: 'HugSelect Django UI',
     slug: 'hugselect-django-ui',
     description:
-      'Research internship project: a Django interface for exploring, filtering, comparing, and explaining Hugging Face foundation model recommendations.',
-    technologies: ['Python', 'Django', 'Elasticsearch', 'Hugging Face'],
+      'Research internship project: an evidence-driven Django decision-support tool for selecting Hugging Face foundation models from a 69,000-record Elasticsearch snapshot.',
+    technologies: ['Python', 'Django', 'Elasticsearch', 'Decision Support'],
     githubUrl: 'https://github.com/gokdenizinan/hugselect-django-ui',
     published: '2026-09-11',
     featured: true,

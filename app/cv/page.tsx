@@ -43,13 +43,13 @@ export default function CvPage() {
                 <span className="cv-period">Summer 2026</span>
               </div>
               <p className="cv-desc">
-                Working on a Django-based user interface for HugSelect, a research system for recommending Hugging Face
+                Worked on HugSelect, an evidence-driven Django decision-support tool for selecting Hugging Face
                 foundation models.
               </p>
               <ul className="cv-list">
-                <li>Understanding the existing recommendation pipeline, processed model datasets, and Elasticsearch-based search flow.</li>
-                <li>Designing a user-facing interface for searching, filtering, comparing, and explaining AI model recommendations.</li>
-                <li>Working with Python, Django, Elasticsearch, Hugging Face, HTML, CSS, JavaScript, and Git.</li>
+                <li>Worked with the recommendation pipeline, processed model datasets, and Elasticsearch-based search flow.</li>
+                <li>Implemented and validated user-facing search, filtering, comparison, explanation, and reporting workflows.</li>
+                <li>Contributed to software, validation, visualisation, and writing for the revised HugSelect release.</li>
               </ul>
             </div>
           </section>
@@ -104,9 +104,9 @@ export default function CvPage() {
                 company: 'Wageningen University — Python, Django, Elasticsearch, Hugging Face',
                 period: 'Summer 2026',
                 items: [
-                  'Built a Django-based interface for HugSelect, a research system for recommending Hugging Face foundation models.',
-                  'Worked with the recommendation pipeline, processed model datasets, and Elasticsearch-based search flow.',
-                  'Designed user-facing search, filtering, comparison, and explanation workflows for model recommendations.',
+                  'Worked on an evidence-driven multi-criteria decision-support tool for selecting Hugging Face foundation models.',
+                  'Helped connect Django views, Elasticsearch retrieval, criterion-level explanations, model comparison, Decision Stress analysis, and PDF decision records.',
+                  'Contributed to release validation, including automated tests, reproducibility checks, and documentation for the revised software release.',
                 ],
               },
               {
