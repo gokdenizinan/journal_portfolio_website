@@ -15,7 +15,32 @@ export function ScrollPositionController() {
 
     if (window.location.hash) return;
 
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    const scrollToTop = () => {
+      const root = document.documentElement;
+      const previousScrollBehavior = root.style.scrollBehavior;
+
+      root.style.scrollBehavior = 'auto';
+      window.scrollTo(0, 0);
+      root.style.scrollBehavior = previousScrollBehavior;
+    };
+
+    scrollToTop();
+
+    const firstFrame = window.requestAnimationFrame(scrollToTop);
+    const secondFrame = window.requestAnimationFrame(() => window.requestAnimationFrame(scrollToTop));
+    const shortDelay = window.setTimeout(scrollToTop, 80);
+    const longerDelay = window.setTimeout(scrollToTop, 220);
+
+    const handlePageShow = () => scrollToTop();
+    window.addEventListener('pageshow', handlePageShow);
+
+    return () => {
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(secondFrame);
+      window.clearTimeout(shortDelay);
+      window.clearTimeout(longerDelay);
+      window.removeEventListener('pageshow', handlePageShow);
+    };
   }, [pathname]);
 
   return null;

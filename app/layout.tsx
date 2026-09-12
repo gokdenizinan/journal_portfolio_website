@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
@@ -37,6 +38,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body>
+        <Script id="scroll-restoration" strategy="beforeInteractive">
+          {`
+            try {
+              if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+              }
+            } catch (_) {}
+          `}
+        </Script>
         <Navbar />
         {children}
         <Footer />
