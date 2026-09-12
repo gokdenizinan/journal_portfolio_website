@@ -54,9 +54,13 @@ export function Navbar() {
 
     const syncHash = () => {
       const hash = window.location.hash;
+      const normalizedPathname = pathname.replace(/\.html$/, '');
+      const isHome = normalizedPathname === '/' || normalizedPathname === '/index';
+
       setActiveHash(hash);
 
       if (!hash) return;
+      if (!isHome || (hash !== '#about' && hash !== '#work')) return;
 
       const target = document.getElementById(decodeURIComponent(hash.slice(1)));
       if (!target) return;

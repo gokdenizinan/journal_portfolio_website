@@ -3,6 +3,7 @@ import './globals.css';
 import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 import { RevealController } from '@/components/RevealController';
+import { ScrollPositionController } from '@/components/ScrollPositionController';
 import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Navbar />
         {children}
         <Footer />
+        <ScrollPositionController />
         <RevealController />
       </body>
     </html>
