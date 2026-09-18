@@ -1,9 +1,12 @@
 'use client';
 
-import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { useLayoutEffect } from 'react';
 
 export function RevealController() {
-  useEffect(() => {
+  const pathname = usePathname();
+
+  useLayoutEffect(() => {
     const revealItems = document.querySelectorAll<HTMLElement>('.reveal-up');
     if (!revealItems.length) return;
 
@@ -24,10 +27,19 @@ export function RevealController() {
       { threshold: 0.15, rootMargin: '0px 0px -40px 0px' },
     );
 
-    revealItems.forEach((element) => observer.observe(element));
+    revealItems.forEach((element) => {
+      const bounds = element.getBoundingClientRect();
+
+      if (bounds.top < window.innerHeight && bounds.bottom > 0) {
+        element.classList.add('is-visible');
+        return;
+      }
+
+      observer.observe(element);
+    });
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }
