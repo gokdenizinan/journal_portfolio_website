@@ -25,6 +25,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Momentum Grids',
+    slug: 'momentum-grids',
     description:
       '🌱 Small habits are easy to lose track of. Momentum Grids helps you record the days you show up and see your progress across a whole year in a colourful heatmap. Whether you are reading, exercising, or practising something new, the grid makes your patterns easier to spot and your small wins harder to overlook. Available on the web and as an iOS app. One day, one square, a little more momentum.',
     technologies: ['Web App', 'iOS', 'Habits'],

@@ -18,10 +18,14 @@ export function ProjectList() {
             {project.iconClassName ? (
               <div className="project-title-row">
                 <span className={`project-icon ${project.iconClassName}`} aria-hidden="true" />
-                <h3 className="project-title">{project.title}</h3>
+                <h3 className="project-title">
+                  {project.slug ? <Link href={`/${project.slug}.html`}>{project.title}</Link> : project.title}
+                </h3>
               </div>
             ) : (
-              <h3 className="project-title">{project.title}</h3>
+              <h3 className="project-title">
+                {project.slug ? <Link href={`/${project.slug}.html`}>{project.title}</Link> : project.title}
+              </h3>
             )}
             <p className="project-desc">{project.description}</p>
           </div>
