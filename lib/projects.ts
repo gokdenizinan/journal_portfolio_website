@@ -26,7 +26,7 @@ export const projects: Project[] = [
   {
     title: 'Momentum Grids',
     description:
-      'Quiet, year-at-a-glance habit tracker for building visible momentum one day at a time. Available on the web and iOS, with a heatmap-style view of your consistency.',
+      '🌱 Small habits are easy to lose track of. Momentum Grids helps you record the days you show up and see your progress across a whole year in a colourful heatmap. Whether you are reading, exercising, or practising something new, the grid makes your patterns easier to spot and your small wins harder to overlook. Available on the web and as an iOS app. One day, one square, a little more momentum.',
     technologies: ['Web App', 'iOS', 'Habits'],
     liveUrl: 'https://momentumgrids.com/',
     appStoreUrl: 'https://apps.apple.com/app/momentumgrids/id6797536141',

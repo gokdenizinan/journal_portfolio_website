@@ -145,7 +145,7 @@ export default function CvPage() {
                 period: '2026 — Ongoing',
                 items: [
                   'Built a quiet, year-at-a-glance habit tracking web app with user accounts and a heatmap-style interface for reviewing consistency over time.',
-                  'Focused the product around simple automation and a quiet, reliable user experience.',
+                  'Designed the product to help people record daily habits, recognise patterns, and see gradual progress that can otherwise be easy to overlook.',
                   'Deployed the beta version publicly on Vercel for testing and iteration.',
                   'Released the Momentum Grids iOS app on the App Store, making the product available on both web and iOS.',
                 ],
