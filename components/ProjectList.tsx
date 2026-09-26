@@ -33,8 +33,13 @@ export function ProjectList() {
             ) : null}
             {project.liveUrl ? (
               <Link href={project.liveUrl} className="project-link" target="_blank" rel="noopener">
-                Live ↗
+                {project.appStoreUrl ? 'Web app ↗' : 'Live ↗'}
               </Link>
+            ) : null}
+            {project.appStoreUrl ? (
+              <a href={project.appStoreUrl} className="project-link" target="_blank" rel="noopener noreferrer">
+                App Store ↗
+              </a>
             ) : null}
             {project.githubUrl && !project.slug ? (
               <Link href={project.githubUrl} className="project-link" target="_blank" rel="noopener">

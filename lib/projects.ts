@@ -5,6 +5,7 @@ export type Project = {
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
+  appStoreUrl?: string;
   iconClassName?: string;
   published: string;
   featured: boolean;
@@ -25,9 +26,10 @@ export const projects: Project[] = [
   {
     title: 'Momentum Grids',
     description:
-      'Quiet, year-at-a-glance habit tracker for building visible momentum one day at a time, with accounts, simple automation, and a heatmap-style view.',
-    technologies: ['Web App', 'Habits'],
+      'Quiet, year-at-a-glance habit tracker for building visible momentum one day at a time. Available on the web and iOS, with a heatmap-style view of your consistency.',
+    technologies: ['Web App', 'iOS', 'Habits'],
     liveUrl: 'https://momentumgrids.com/',
+    appStoreUrl: 'https://apps.apple.com/app/momentumgrids/id6797536141',
     iconClassName: 'momentum-grids-icon',
     published: '2026-07-15',
     featured: true,
