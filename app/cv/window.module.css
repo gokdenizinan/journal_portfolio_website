@@ -15,6 +15,9 @@
 .airplane-window:hover {
   transform: rotate(-2deg) translateY(-3px);
 }
+.airplane-window:focus-visible {
+  border-radius: 46% 46% 43% 43% / 32% 32% 37% 37%;
+}
 .window-outer {
   position: relative;
   display: block;
@@ -138,7 +141,7 @@
 .window-shade {
   position: absolute;
   inset: 0 0 auto;
-  height: 37px;
+  height: 100%;
   z-index: 3;
   border-radius: 0 0 48% 48% / 0 0 15% 15%;
   background: linear-gradient(
@@ -150,7 +153,8 @@
   );
   box-shadow: 0 3px 5px #41403355;
   border-bottom: 2px solid #aaa69d;
-  transition: height 0.8s cubic-bezier(0.65, 0, 0.2, 1);
+  transform: translateY(-82%);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .shade-handle {
   position: absolute;
@@ -191,7 +195,7 @@
     radial-gradient(circle at 68% 22%, white 0.5px, transparent 1px);
 }
 .window-caption {
-  font: 7px var(--cv-mono);
+  font: 0.6875rem var(--font-body);
   color: var(--cv-muted);
   letter-spacing: 1.25px;
   margin-top: 19px;
@@ -215,7 +219,10 @@
 }
 
 .airplane-window {
-  cursor: pointer;
+  cursor: ns-resize;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .night .sky {
   background: linear-gradient(#192d41, #37516a 55%, #778c9c);
@@ -241,7 +248,29 @@
     height: 190px;
   }
   .window-caption {
-    font-size: 6px;
+    font-size: 0.6875rem;
     margin-top: 13px;
+  }
+}
+
+.dragging .window-shade {
+  transition: none;
+}
+.dragging,
+.airplane-window:active {
+  transform: none;
+  cursor: grabbing;
+}
+.windowHint {
+  font: 0.75rem/1.7 var(--font-body);
+  color: var(--cv-muted);
+  margin-top: 6px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sky,
+  .stars,
+  .sun,
+  .cloud {
+    transition: none;
   }
 }

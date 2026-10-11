@@ -6,7 +6,7 @@
   --cv-line: #d9ddd4;
   --cv-accent: #58734f;
   --cv-chip: #edefe8;
-  --cv-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --cv-type: var(--font-body);
   position: relative;
   background: var(--cv-bg);
   color: var(--cv-ink);
@@ -15,7 +15,8 @@
     background 0.65s,
     color 0.65s;
   min-height: 100vh;
-  font-weight: 400;
+  font-family: var(--font-body);
+  font-weight: 300;
 }
 .dark {
   --cv-bg: #232824;
@@ -28,12 +29,13 @@
 }
 .page a:focus-visible,
 .page button:focus-visible,
-.page summary:focus-visible {
+.page summary:focus-visible,
+.page [role="slider"]:focus-visible {
   outline: 2px solid var(--cv-accent);
   outline-offset: 6px;
 }
 .content {
-  max-width: 650px;
+  max-width: var(--max-narrow);
   margin: 0 auto;
 }
 .identity {
@@ -42,7 +44,7 @@
   top: 111px;
   display: flex;
   gap: 15px;
-  font: 9px/2 var(--cv-mono);
+  font: 0.8125rem/1.8 var(--cv-type);
   text-transform: uppercase;
   letter-spacing: 1.3px;
   color: var(--cv-muted);
@@ -54,10 +56,10 @@
 .name {
   font-weight: 600;
   color: var(--cv-ink);
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .identityNote {
-  font-size: 7px;
+  font-size: 0.6875rem;
   color: var(--cv-faint);
   margin-top: 6px;
   letter-spacing: 1px;
@@ -73,7 +75,7 @@
   position: absolute;
   right: 54px;
   top: 112px;
-  font: 10px var(--cv-mono);
+  font: 0.8125rem var(--cv-type);
   color: var(--cv-muted);
 }
 .download span {
@@ -91,24 +93,24 @@
   padding: 30px 35px 0;
 }
 .eyebrow {
-  font: 7px var(--cv-mono);
+  font: 0.6875rem var(--cv-type);
   letter-spacing: 1.6px;
   color: var(--cv-faint);
   margin-bottom: 19px;
 }
 .intro h1 {
-  font-size: 21px;
-  line-height: 1.4;
-  font-family: var(--font-body);
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.75rem);
+  line-height: 1.12;
+  font-weight: 400;
   letter-spacing: -0.7px;
   margin-bottom: 13px;
 }
 .introText {
-  font-size: 15px;
+  font-size: 1.075rem;
   color: var(--cv-muted);
   line-height: 1.85;
-  max-width: 460px;
+  max-width: 600px;
   margin: 0 auto;
 }
 .contents {
@@ -117,7 +119,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 24px;
-  font: 8px var(--cv-mono);
+  font: 0.8125rem var(--cv-type);
   color: var(--cv-muted);
 }
 .contents span {
@@ -136,12 +138,12 @@
   align-items: center;
   flex-direction: column;
   gap: 12px;
-  width: 50px;
-  margin: 0 0 38px -25px;
+  width: 110px;
+  margin: 0 0 38px -55px;
   color: var(--cv-accent);
 }
 .routeStart span {
-  font: 6px var(--cv-mono);
+  font: 0.6875rem var(--cv-type);
   letter-spacing: 1px;
 }
 .routeStart svg {
@@ -197,18 +199,18 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font: 11px/1.7 var(--cv-mono);
+  font: 0.8125rem/1.7 var(--cv-type);
   color: var(--cv-muted);
   white-space: nowrap;
   letter-spacing: 0.5px;
 }
 .date > span:first-child {
-  font-size: 5px;
+  font-size: 0.625rem;
   letter-spacing: 0.7px;
   color: var(--cv-faint);
 }
 .date small {
-  font-size: 6px;
+  font-size: 0.6875rem;
   letter-spacing: 1px;
   color: var(--cv-faint);
 }
@@ -218,7 +220,7 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  font: 11px var(--cv-mono);
+  font: 0.8125rem var(--cv-type);
   margin-bottom: 10px;
 }
 .researchIcon {
@@ -238,8 +240,9 @@
   color: #897257;
 }
 .stop h3 {
-  font-size: 17px;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
   letter-spacing: -0.3px;
   line-height: 1.5;
 }
@@ -250,24 +253,24 @@
   align-items: center;
 }
 .current {
-  font: 7px var(--cv-mono);
+  font: 0.6875rem var(--cv-type);
   letter-spacing: 1px;
   color: var(--cv-accent);
 }
 .role {
-  font-size: 14px;
+  font-size: 0.9375rem;
   line-height: 1.65;
   margin: 3px 0 6px;
   color: var(--cv-ink);
 }
 .description {
-  font-size: 14px;
+  font-size: 0.9375rem;
   line-height: 1.85;
   color: var(--cv-muted);
 }
 .details {
   margin-top: 14px;
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--cv-muted);
 }
 .details summary {
@@ -284,7 +287,7 @@
   display: none;
 }
 .details summary > span {
-  font-size: 16px;
+  font-size: 1.25rem;
   transition: transform 0.2s;
 }
 .details[open] summary > span {
@@ -317,7 +320,7 @@
 .projectPreview > span:nth-child(2) {
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 0.875rem;
   line-height: 1.8;
 }
 .projectPreview strong {
@@ -326,7 +329,7 @@
 }
 .projectPreview > span:nth-child(2) > span {
   color: var(--cv-muted);
-  font-size: 11px;
+  font-size: 0.8125rem;
 }
 .externalArrow {
   margin-left: auto;
@@ -342,7 +345,7 @@
   flex-wrap: wrap;
   gap: 8px 16px;
   margin-top: 14px;
-  font: 8px/1.8 var(--cv-mono);
+  font: 0.8125rem/1.8 var(--cv-type);
   color: var(--cv-accent);
 }
 .routeEnd {
@@ -350,7 +353,7 @@
   align-items: center;
   gap: 25px;
   margin-left: -3px;
-  font: 6px var(--cv-mono);
+  font: 0.6875rem var(--cv-type);
   letter-spacing: 1px;
   color: var(--cv-faint);
 }
@@ -371,14 +374,14 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  font: 6px/1.6 var(--cv-mono);
+  font: 0.75rem/1.6 var(--cv-type);
   letter-spacing: 1px;
   color: var(--cv-faint);
 }
 .section h2 {
-  font-family: var(--font-body);
-  font-size: 19px;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  font-weight: 400;
   letter-spacing: -0.6px;
   line-height: 1.5;
   margin: 18px 0 16px;
@@ -395,10 +398,11 @@
   padding: 17px 0;
 }
 .project summary:hover .projectTitle strong {
+  font-family: var(--font-display);
   color: var(--cv-accent);
 }
 .projectNumber {
-  font: 8px var(--cv-mono);
+  font: 0.8125rem var(--cv-type);
   color: var(--cv-faint);
   align-self: flex-start;
   line-height: 2.6;
@@ -410,19 +414,19 @@
   min-width: 0;
 }
 .projectTitle strong {
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: 1.25rem;
+  line-height: 1.3;
   font-weight: 500;
   color: var(--cv-ink);
 }
 .projectTitle > span {
-  font-size: 10px;
+  font-size: 0.8125rem;
   line-height: 1.7;
   color: var(--cv-muted);
 }
 .plus {
   margin-left: auto;
-  font-size: 17px;
+  font-size: 1.25rem;
   font-weight: 300;
   color: var(--cv-faint);
   transition: transform 0.2s;
@@ -431,7 +435,7 @@
   transform: rotate(45deg);
 }
 .projectBody {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--cv-muted);
   padding: 0 0 18px 23px;
 }
@@ -439,11 +443,11 @@
   margin: 9px 0 15px;
 }
 .period {
-  font: 8px var(--cv-mono);
+  font: 0.8125rem var(--cv-type);
   color: var(--cv-faint);
 }
 .textLink {
-  font-size: 11px;
+  font-size: 0.8125rem;
   display: inline-block;
   border-bottom: 1px solid var(--cv-line);
   padding-bottom: 4px;
@@ -457,7 +461,7 @@
 }
 .skillGroup h3,
 .interests h3 {
-  font: 8px var(--cv-mono);
+  font: 0.8125rem var(--cv-type);
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: var(--cv-muted);
@@ -469,7 +473,7 @@
   gap: 7px;
 }
 .tags > span {
-  font-size: 11px;
+  font-size: 0.8125rem;
   line-height: 1.5;
   color: var(--cv-muted);
   border: 1px solid var(--cv-line);
@@ -478,12 +482,12 @@
   padding: 6px 10px;
 }
 .skillGroup p {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--cv-ink);
   line-height: 1.9;
 }
 .skillGroup p > span {
-  font-size: 9px;
+  font-size: 0.75rem;
   color: var(--cv-muted);
   margin: 0 4px;
 }
@@ -494,17 +498,18 @@
   margin-top: 19px;
 }
 .certificate > span {
-  font-size: 13px;
+  font-size: 0.9375rem;
   color: var(--cv-accent);
   line-height: 1.6;
 }
 .certificate h3 {
-  font-size: 12px;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 400;
   line-height: 1.7;
 }
 .certificate p {
-  font-size: 11px;
+  font-size: 0.8125rem;
   color: var(--cv-muted);
   margin-top: 3px;
 }
@@ -512,7 +517,7 @@
   margin-top: 26px;
 }
 .interests p {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--cv-muted);
   line-height: 2;
 }
@@ -530,18 +535,18 @@
 .contact h2 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 32px;
+  font-size: clamp(2.2rem, 4.5vw, 3.75rem);
   letter-spacing: -0.8px;
   line-height: 1.3;
 }
 .contact > p:not(.eyebrow) {
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--cv-muted);
   margin-top: 13px;
 }
 .contact > a {
   display: inline-block;
-  font-size: 11px;
+  font-size: 0.8125rem;
   border-bottom: 1px solid var(--cv-line);
   padding: 6px 0;
   margin-top: 18px;
@@ -560,110 +565,129 @@
     right: 36px;
   }
   .page {
-    padding-top: 192px;
+    padding-top: 220px;
   }
 }
 @media (max-width: 600px) {
   .page {
-    padding: 164px 12px 0;
+    padding: 218px 16px 0;
   }
   .identity {
     left: 26px;
     top: 100px;
-    font-size: 7px;
+    font-size: 0.6875rem;
     gap: 12px;
   }
   .name {
-    font-size: 9px;
+    font-size: 0.75rem;
   }
   .identityNote {
-    font-size: 6px;
+    font-size: 0.6875rem;
   }
   .download {
     top: 102px;
     right: 26px;
-    font-size: 8px;
+    font-size: 0.75rem;
   }
   .intro {
     padding: 32px 18px 0;
   }
   .intro h1 {
-    font-size: 22px;
+    font-size: clamp(2.2rem, 4.5vw, 3.75rem);
   }
   .introText {
-    font-size: 13px;
+    font-size: 1rem;
   }
   .desktopBreak {
     display: none;
   }
   .eyebrow {
-    font-size: 6px;
+    font-size: 0.6875rem;
     letter-spacing: 1.2px;
   }
   .journey {
-    margin: 45px 11px 0 65px;
+    margin: 45px 8px 0 12px;
+  }
+  .routeStart {
+    align-items: flex-start;
+    width: auto;
+    margin-left: 0;
+  }
+  .routeStart svg {
+    margin-left: -8px;
+  }
+  .routeStart::after {
+    left: 0;
   }
   .stop {
     padding-left: 21px;
     padding-bottom: 40px;
   }
   .stop h3 {
-    font-size: 16px;
+    font-size: 1.25rem;
+  }
+  .stop::before {
+    top: 74px;
   }
   .date {
-    right: calc(100% + 11px);
-    font-size: 10px;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    font-size: 0.8125rem;
   }
   .date > span:first-child {
-    font-size: 4px;
+    font-size: 0.625rem;
     letter-spacing: 0.2px;
   }
   .date small {
-    font-size: 5px;
+    font-size: 0.625rem;
   }
   .description,
   .role {
-    font-size: 13px;
+    font-size: 0.9375rem;
   }
   .section {
-    margin: 52px 11px 0 86px;
+    margin: 52px 8px 0 34px;
     padding-top: 20px;
   }
   .sectionLabel {
-    font-size: 5px;
+    font-size: 0.625rem;
     letter-spacing: 0.4px;
   }
   .section h2 {
-    font-size: 18px;
+    font-size: clamp(1.45rem, 2.2vw, 2rem);
   }
   .projectTitle strong {
-    font-size: 12px;
+    font-size: 1.25rem;
   }
   .projectTitle > span {
-    font-size: 9px;
+    font-size: 0.75rem;
   }
   .project summary {
     gap: 8px;
   }
   .projectNumber {
-    font-size: 7px;
+    font-size: 0.6875rem;
   }
   .projectBody {
     padding-left: 0;
-    font-size: 11px;
+    font-size: 0.9375rem;
   }
   .tags > span {
-    font-size: 10px;
+    font-size: 0.8125rem;
     padding: 5px 8px;
   }
   .contact {
     padding: 65px 12px 58px;
   }
   .contact h2 {
-    font-size: 28px;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
   }
   .contact > a {
-    font-size: 10px;
+    font-size: 0.8125rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {
