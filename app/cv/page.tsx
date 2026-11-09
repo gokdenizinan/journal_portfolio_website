@@ -47,7 +47,7 @@ export default function CvPage() {
         <span className={styles.perforation} aria-hidden="true" />
         <div>
           <span className={styles.name}>{site.name}</span>
-          <span>Wageningen, Netherlands</span>
+          <span>Istanbul, Turkey</span>
           <span className={styles.identityNote}>
             A WORK IN PROGRESS. ALWAYS.
           </span>
@@ -96,28 +96,39 @@ export default function CvPage() {
             >
               W
             </span>
-            <h3>Wageningen University</h3>
-            <p className={styles.role}>Student Researcher</p>
+            <h3>Wageningen University &amp; Research</h3>
+            <p className={styles.role}>Student Researcher · Information Technology Group</p>
             <p className={styles.description}>
-              Worked on HugSelect, an evidence-driven Django decision-support
+              Developed HugSelect, an evidence-driven Django decision-support
               tool for selecting Hugging Face foundation models.
             </p>
+            <div className={styles.achievements}>
+              <span>First-author paper · SoftwareX (minor revision)</span>
+            </div>
             <details className={styles.details}>
               <summary>
                 Research &amp; contributions <span aria-hidden="true">+</span>
               </summary>
               <ul>
                 <li>
-                  Worked with the recommendation pipeline, processed model
-                  datasets, and Elasticsearch-based search flow.
+                  Built the Django application that turns a natural-language
+                  request and MoSCoW priorities into structured criteria and
+                  ranks models from an Elasticsearch snapshot of 69,000
+                  Hugging Face records.
                 </li>
                 <li>
-                  Implemented and validated user-facing search, filtering,
-                  comparison, explanation, and reporting workflows.
+                  Implemented explainable decision views: criterion-level
+                  explanations, comparison, Decision Stress sensitivity
+                  analysis, and PDF decision records.
                 </li>
                 <li>
-                  Contributed to software, validation, visualisation, and
-                  writing for the revised HugSelect release.
+                  Validated the release for reproducibility, with automated
+                  tests, Docker end-to-end runs, and a public package archived
+                  on Zenodo.
+                </li>
+                <li>
+                  First author of the HugSelect paper, currently in minor
+                  revision at SoftwareX.
                 </li>
               </ul>
             </details>
@@ -172,14 +183,17 @@ export default function CvPage() {
               <h3>Sabanci University</h3>
               <span className={styles.current}>CURRENT</span>
             </div>
-            <p className={styles.role}>BSc Computer Science / BSc Economics</p>
+            <p className={styles.role}>
+              BSc Computer Science and Engineering · Double Major in Economics
+            </p>
             <p className={styles.description}>
               Istanbul, Turkey. Minor in Finance.
               <br />
               September 2023 — June 2028.
             </p>
             <div className={styles.achievements}>
-              <span>3.99 / 4.0 GPA</span>
+              <span>3.96 / 4.0 GPA</span>
+              <span>High Honor every semester</span>
               <span>Half scholarship for academic excellence</span>
             </div>
           </article>
@@ -287,6 +301,10 @@ export default function CvPage() {
           <div className={styles.tags}>
             {[
               "SwiftUI",
+              "Django",
+              "PostgreSQL",
+              "Elasticsearch",
+              "Docker",
               "Git",
               "VS Code",
               "RStudio",

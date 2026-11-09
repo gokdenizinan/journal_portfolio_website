@@ -5,9 +5,10 @@ export const cvProjects = [
       "Wageningen University — Python, Django, Elasticsearch, Hugging Face",
     period: "Summer 2026",
     items: [
-      "Worked on an evidence-driven multi-criteria decision-support tool for selecting Hugging Face foundation models.",
-      "Helped connect Django views, Elasticsearch retrieval, criterion-level explanations, model comparison, Decision Stress analysis, and PDF decision records.",
-      "Contributed to release validation, including automated tests, reproducibility checks, and documentation for the revised software release.",
+      "Developed an evidence-driven multi-criteria decision-support tool for selecting Hugging Face foundation models.",
+      "Connected Django views, Elasticsearch retrieval over 69,000 model records, criterion-level explanations, model comparison, Decision Stress analysis, and PDF decision records.",
+      "Validated the release with automated tests, reproducibility checks, and a public package archived on Zenodo.",
+      "First author of the HugSelect paper, currently in minor revision at SoftwareX.",
     ],
   },
   {
@@ -22,8 +23,8 @@ export const cvProjects = [
   },
   {
     role: "SmartCalendar",
-    company: "Wageningen University — Java, GUI Development",
-    period: "2026 — Ongoing",
+    company: "Wageningen University — Java, team project",
+    period: "Spring 2026",
     items: [
       "Built a multi-user scheduling system that identifies optimal meeting times from shared calendar data.",
       "Implemented event management features including invitations, notifications, and dynamic updates.",
@@ -42,13 +43,13 @@ export const cvProjects = [
   },
   {
     role: "Momentum Grids",
-    company: "Web & iOS Application — Habit Tracking",
-    period: "2026 — Ongoing",
+    company: "iOS App & Web Service — SwiftUI, Django, PostgreSQL",
+    period: "Jul 2026 — Ongoing",
     items: [
-      "Built a quiet, year-at-a-glance habit tracking web app with user accounts and a heatmap-style interface for reviewing consistency over time.",
-      "Designed the product to help people record daily habits, recognise patterns, and see gradual progress that can otherwise be easy to overlook.",
-      "Deployed the beta version publicly on Vercel for testing and iteration.",
-      "Released the Momentum Grids iOS app on the App Store, making the product available on both web and iOS.",
+      "Designed, built and released an iOS habit tracker that shows each habit as a year-long grid; on the App Store since September 2026.",
+      "Native SwiftUI app with widgets, Live Activities, Siri shortcuts and offline sync, backed by a Django REST API shared with the web app.",
+      "Behaviour-change design without fragile streaks: days can be frozen for illness or travel, and progress stays visible.",
+      "Accessibility and localisation: Dynamic Type, VoiceOver, English and Turkish; 1,800+ automated tests and CI-gated releases.",
     ],
   },
   {
