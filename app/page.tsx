@@ -123,8 +123,8 @@ export default function HomePage() {
                 projects I build along the way.
               </p>
               <p>
-                Currently based in <strong>Wageningen, Netherlands</strong>, learning through small software projects
-                and music theory experiments.
+                Currently based in <strong>Istanbul, Turkey</strong>, studying at Sabancı University, building software
+                and writing about what I learn.
               </p>
               <div className="about-links">
                 <Link href="/cv.html" className="btn-primary">

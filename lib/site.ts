@@ -6,7 +6,7 @@ export const site = {
   url: 'https://gokdenizinan.com',
   email: 'gokdeniz.inan@sabanciuniv.edu',
   github: 'https://github.com/gokdenizinan',
-  linkedin: 'https://linkedin.com/in/gökdeniz-inan-0769b6203',
+  linkedin: 'https://www.linkedin.com/in/gokdenizinan/',
 };
 
 export const navItems = [
